@@ -1,0 +1,8 @@
+  @import "tailwindcss";
+/* In your index.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@600&display=swap');
+:root {
+  --grn: #434B34;
+  --txt: #3a3a3a;
+  --heading-font: "Poppins", sans-serif;
+}
