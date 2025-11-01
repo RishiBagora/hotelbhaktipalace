@@ -4,7 +4,7 @@ import React from 'react';
 // In a real app, this would likely come from a CMS or API.
 const amenitiesData = [
   {
-    icon: 'https://www.freeiconspng.com/thumbs/wifi-icon/3d-black-wifi-icon-9.png',
+    icon: 'https://cdn1.iconfinder.com/data/icons/essential-tiny-icons/16/wi-fi-512.png',
     title: 'Wifi',
     
   },
@@ -88,14 +88,12 @@ const AmenitiesSection = () => {
         
         {/* --- Heading Block --- */}
         <div className="max-w-2xl mx-auto text-center mb-16">
-          <p className="text-sm font-semibold text-brand-accent uppercase tracking-[0.2em] mb-2">
-            AMENITIES & SERVICES
-          </p>
+          
           <h2 className="font-serif text-3xl font-semibold text-brand-primary md:text-4xl mb-4">
-            Luxury Beyond Expectations
+            Facilities
           </h2>
           <p className="text-base text-brand-secondary leading-relaxed md:text-lg">
-            Every moment of your stay is elevated with world-class services designed for relaxation, indulgence, and style.
+            Every moment of your stay is elevated with best services designed for relaxation, indulgence, and style.
           </p>
         </div>
 
@@ -115,6 +113,10 @@ const AmenitiesSection = () => {
             />
           ))}
         </div>
+
+        {/* section to be removed  */}
+        <p className='text-center text-3xl mt-10 opacity-20'>*will add more later*</p>
+            
       </div>
     </section>
   );
