@@ -23,17 +23,17 @@ const diningHighlights = [
 const slideshowMedia = [
     {
         type: 'video', // Added video type
-        src: "./public/images/pangatvideo.mp4",
+        src: "/images/pangatvideo.mp4",
         alt: "Vibrant video of restaurant ambiance"
     },
     {
         type: 'image',
-        src: "./public/images/pangat1.jpg",
+        src: "/images/pangat1.jpg",
         alt: "Luxurious dining hall of Pangat restaurant at Hotel Bhakyi Palace"
     },
     {
         type: 'video', // Added video type
-        src: "./public/images/pangatvideo2.mp4",
+        src: "/images/pangatvideo2.mp4",
         alt: "Vibrant video of restaurant ambiance"
     },
 ];
