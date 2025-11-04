@@ -1,58 +1,103 @@
-// import React from 'react'
-
-// const Navbar = () => {
-//   return (
-//     <div className='w-full bg-white h-[7vh] flex justify-between items-center px-[3vw]'>
-//         <div className="menu-icon">
-//             <img className='w-[10vw]' src="./public/menu.svg" alt="" />
-//         </div>
-//         <div className="buttns flex gap-2">
-//             <div className="contact border rounded-4xl px-3 py-1 flex justify-center items-center text-[70%] md:text-[100%]">Contact us</div>
-//             <div className="booknow border rounded-4xl px-3 py-1 flex justify-center items-center text-[70%] font-bold text-white bg-black  md:text-[100%]">Book now</div>
-//         </div>
-//     </div>
-//   )
-// }
-
-// export default Navbar
-
-
-
-
-
-
-
-import React from 'react';
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
-  return (
-    // 1. USE a fixed height (h-16) instead of vh for consistency.
-    // 2. USE responsive padding: px-4 for mobile, sm:px-6 for larger screens.
-    <nav className='w-full bg-white h-16 shadow-md flex justify-between items-center px-4 sm:px-6'>
-      
-      {/* --- Menu Icon (Left Side) --- */}
-      {/* This will now be visible on all screen sizes */}
-      <div className="menu-icon">
-        {/* 3. USE a fixed size (h-6 w-6) for the icon to prevent it from getting huge on desktops. */}
-        {/* Added cursor-pointer for better UX */}
-        <img className='h-6 w-6 cursor-pointer' src="/menu.svg" alt="Menu Icon" />
-      </div>
+  const [menuOpen, setMenuOpen] = useState(false);
 
-      {/* --- Buttons (Right Side) --- */}
-      {/* This container will also be visible on all screen sizes */}
-      <div className="flex items-center gap-2 sm:gap-3">
-        {/* 4. USE <button> tags for accessibility and semantics. */}
-        {/* 5. USE standard text sizes (text-xs, sm:text-sm) for predictable scaling. */}
-        {/* 6. USE standard rounded-full for the pill shape. */}
-        {/* 7. Added transition-colors for a smooth hover effect. */}
-        <button className="border border-gray-300 rounded-full px-3 sm:px-4 py-1 text-xs sm:text-sm hover:bg-gray-100 transition-colors">
-          Contact us
-        </button>
-        <button className="border border-black bg-black text-white rounded-full px-3 sm:px-4 py-1 text-xs sm:text-sm font-bold hover:bg-gray-800 transition-colors">
-          Book now
-        </button>
-      </div>
-    </nav>
+  return (
+    <header
+      className="relative top-0 left-0 w-full bg-white shadow-md z-50"
+      style={{ fontFamily: "Inter, sans-serif" }}
+    >
+      <nav className="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-8 h-16">
+        
+        {/* ---- Left: Logo ---- */}
+        <div className="flex items-center gap-2">
+          <img
+            src="./images/bhaktilogo.png"
+            alt="Hotel Bhakyi Palace"
+            className="h-16 w-auto object-contain"
+          />
+          {/* <span
+            className="text-lg font-serif tracking-wide"
+            style={{
+              fontFamily: "Playfair Display, serif",
+              color: "#1a1a1a",
+              fontWeight: 600,
+            }}
+          >
+            Bhakyi Palace
+          </span> */}
+        </div>
+
+        {/* ---- Center: Desktop Nav Links ---- */}
+        <div className="hidden md:flex gap-8 text-sm text-gray-700">
+          {["Home", "Rooms", "Dining", "Gallery", "Contact"].map((item) => (
+            <a
+              key={item}
+              href={`#${item.toLowerCase()}`}
+              className="hover:text-[#c49a6c] transition-colors duration-300"
+            >
+              {item}
+            </a>
+          ))}
+        </div>
+
+        {/* ---- Right: Buttons ---- */}
+        <div className="hidden md:flex items-center gap-3">
+          <button className="border border-gray-300 rounded-full px-4 py-1 text-sm hover:bg-gray-100 transition-colors">
+            Contact us
+          </button>
+          <button className="border border-black bg-black text-white rounded-full px-4 py-1 text-sm font-bold hover:bg-gray-800 transition-colors">
+            Book now
+          </button>
+        </div>
+
+        {/* ---- Mobile Hamburger ---- */}
+        <div className="md:hidden">
+          <button onClick={() => setMenuOpen(!menuOpen)} className="focus:outline-none">
+            <img
+              src={menuOpen ? "/close.svg" : "/menu.svg"}
+              alt="Menu Icon"
+              className="h-6 w-6 cursor-pointer"
+            />
+          </button>
+        </div>
+      </nav>
+
+      {/* ---- Mobile Menu (Drawer) ---- */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            className="md:hidden bg-white shadow-lg absolute top-16 left-0 w-full py-6 px-6 flex flex-col items-center gap-6 text-gray-800"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+          >
+            {["Home", "Rooms", "Dining", "Gallery", "Contact"].map((item) => (
+              <a
+                key={item}
+                href={`#${item.toLowerCase()}`}
+                className="text-base hover:text-[#c49a6c] transition-colors duration-300"
+                onClick={() => setMenuOpen(false)}
+              >
+                {item}
+              </a>
+            ))}
+
+            <div className="flex flex-col gap-3 w-full mt-4">
+              <button className="border border-gray-300 rounded-full py-2 text-sm hover:bg-gray-100 transition-colors">
+                Contact us
+              </button>
+              <button className="border border-black bg-black text-white rounded-full py-2 text-sm font-bold hover:bg-gray-800 transition-colors">
+                Book now
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
   );
 };
 

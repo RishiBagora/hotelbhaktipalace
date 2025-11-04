@@ -16,6 +16,11 @@ module.exports = {
       },
       // --- 2. Add Custom Colors ---
       colors: {
+        accent: '#c49a6c',
+         accent: '#c49a6c',
+      dark: '#1a1a1a',
+      textSecondary: '#c9c9c9',
+        muted: '#faf9f6',
         'brand-primary': '#1c1c1c',
         'brand-secondary': '#6c6c6c',
         'brand-accent': '#c49a6c',

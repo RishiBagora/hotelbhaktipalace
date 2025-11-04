@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Aboutsection = () => {
   return (
@@ -65,11 +66,13 @@ const Aboutsection = () => {
             </p>
 
             {/* CTA Button */}
-            <button
+           
+            <Link to="/about" > <div
               className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[var(--grn)] hover:bg-black md:py-4 md:text-lg md:px-10 transition duration-300 ease-in-out transform hover:-translate-y-1"
             >
-              Read More
-            </button>
+              Read More 
+            </div></Link>
+            
           </div>
         </div>
       </div>

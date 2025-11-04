@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 // --- Data for Dining Highlights ---
 const diningHighlights = [
@@ -222,13 +223,13 @@ const DiningSection = () => {
                 {/* --- View Restaurant Button --- */}
                 <div className="text-center mt-16">
                     <a 
-                        href="/pangat-restaurant" // <-- Update this link to your restaurant's page
-                        className="inline-block bg-brand-accent text-white font-semibold 
+                        
+                        className="inline-block bg-[var(--grn)] text-white font-semibold 
                                    px-10 py-4 rounded-full text-lg 
                                    hover:bg-opacity-80 transition-all duration-300 
                                    shadow-md hover:shadow-lg"
                     >
-                        Explore Pangat
+                       <Link to="/pangat">Explore Pangat</Link>
                     </a>
                 </div>
 

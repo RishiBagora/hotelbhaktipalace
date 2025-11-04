@@ -113,6 +113,7 @@
 
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // --- Data for the rooms ---
 // In a real app, you might fetch this data from an API.
@@ -184,11 +185,9 @@ const RoomsAndSuites = () => {
                 
                 {/* Section Heading */}
                 <div className="max-w-3xl mx-auto text-center mb-16">
-                    <p className="text-sm font-semibold text-brand-accent uppercase tracking-widest mb-2">
-                        Explore our Rooms
-                    </p>
+                    
                     <h2 className="font-serif text-4xl font-semibold text-brand-primary md:text-5xl">
-                        Accommodation
+                        Explore Our Rooms 
                     </h2>
                     <p className="mt-4 text-base text-brand-secondary md:text-lg" style={{ lineHeight: '1.8' }}>
                         Discover rooms designed for tranquility, style, and comfort — blending timeless architecture with modern amenities.
@@ -219,14 +218,16 @@ const RoomsAndSuites = () => {
 
                 {/* --- View All Rooms Button (NEW) --- */}
                 {/* This button is centered and spaced below the grid */}
+                <Link to="/Rooms">
                 <div className="mt-16 text-center">
                     <a
-                        href="/all-rooms" // Update this link to your main rooms page
+                       
                         className="inline-block rounded-full bg-brand-accent px-8 py-4 text-base font-medium text-white bg-[var(--grn)] transition-all duration-300 hover:bg-opacity-40 hover:shadow-lg"
                     >
-                        Discover All Accommodations
+                     Discover All Accommodations
                     </a>
                 </div>
+                </Link>  
 
             </div> 
             {/* End of Container */}
