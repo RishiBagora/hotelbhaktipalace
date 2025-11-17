@@ -1,0 +1,9 @@
+golden accent - #c49a6c
+
+
+ContactHero.jsx
+ContactDetailsStrip.jsx
+ContactForm.jsx
+MapSection.jsx
+WhyVisitNathdwaraStrip.jsx      (optional but recommended)
+ContactCTA.jsx

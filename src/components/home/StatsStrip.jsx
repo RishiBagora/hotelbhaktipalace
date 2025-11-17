@@ -1,7 +1,6 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useState, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
-// Theme colors
 const theme = {
   background: "#faf9f6",
   textPrimary: "#1a1a1a",
@@ -15,118 +14,128 @@ const stats = [
   { number: 95, suffix: "%", label: "Average Occupancy Rate" },
 ];
 
-// Fade-in animation variants
-const fadeInUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
-};
+/* ------------------ COUNTER TRIGGER ON VIEW ------------------ */
+const Counter = ({ value, suffix, start }) => {
+  const [count, setCount] = useState(0);
 
-// Counter animation hook
-const Counter = ({ value, suffix }) => {
-  const [count, setCount] = React.useState(0);
-  React.useEffect(() => {
-    let start = 0;
+  useEffect(() => {
+    if (!start) return;
+
+    let startValue = 0;
     const end = value;
-    const duration = 1500;
-    const stepTime = Math.abs(Math.floor(duration / end));
+    const duration = 1400;
+    const step = end / 50;
+
     const timer = setInterval(() => {
-      start += Math.ceil(end / 60);
-      if (start >= end) {
-        start = end;
+      startValue += step;
+      if (startValue >= end) {
+        startValue = end;
         clearInterval(timer);
       }
-      setCount(start);
-    }, stepTime);
+      setCount(Math.floor(startValue));
+    }, duration / 50);
+
     return () => clearInterval(timer);
-  }, [value]);
+  }, [start, value]);
+
   return (
-    <span>
+    <>
       {count.toLocaleString()}
       {suffix}
-    </span>
+    </>
   );
 };
 
-const StatsStrip = () => {
+/* ------------------ ANIMATIONS ------------------ */
+const fadeUp = {
+  hidden: { opacity: 0, y: 26, filter: "blur(6px)" },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0.8,
+      delay: i * 0.18,
+      ease: [0.16, 1, 0.3, 1],
+    },
+  }),
+};
+
+/* ------------------ MAIN COMPONENT ------------------ */
+export default function StatsStrip() {
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: false, margin: "-150px" });
+
   return (
     <section
-      className="relative py-20 text-center overflow-hidden"
+      ref={sectionRef}
+      className="relative py-28 overflow-hidden"
       style={{
-        backgroundColor: theme.background,
-        color: theme.textPrimary,
+        background: theme.background,
         fontFamily: "Inter, sans-serif",
       }}
     >
-      {/* Subtle marble texture background */}
+      {/* Gold top line */}
       <div
-        className="absolute inset-0 opacity-[0.15] bg-[url('https://www.transparenttextures.com/patterns/marble.png')] bg-repeat"
-        aria-hidden="true"
-      ></div>
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-[2px] rounded-full"
+        style={{ background: theme.accent }}
+      />
 
-      {/* Soft gold top border accent */}
-      <div
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-[2px] rounded-full"
-        style={{ backgroundColor: theme.accent }}
-      ></div>
-
-      <div className="relative max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-12 px-6">
-        {stats.map((stat, index) => (
+      <div className="relative max-w-6xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-3 gap-16 text-center">
+        {stats.map((stat, i) => (
           <motion.div
-            key={index}
-            className="flex flex-col items-center"
+            key={i}
+            custom={i}
+            variants={fadeUp}
             initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: index * 0.2 }}
-            variants={fadeInUp}
+            animate={isInView ? "visible" : "hidden"}
+            whileHover={{ y: -5 }}
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            className="relative flex flex-col items-center"
           >
-            {/* Animated Gold Number with shimmer */}
-            <motion.h2
-              className="text-4xl md:text-5xl font-semibold mb-2 relative inline-block"
+            {/* Number */}
+            <h2
+              className="text-5xl md:text-6xl font-serif font-semibold text-[var(--accent)]"
               style={{
                 fontFamily: "Playfair Display, serif",
                 color: theme.accent,
-                textTransform: "capitalize",
-              }}
-              initial={{ backgroundPosition: "0% 50%" }}
-              animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
-              transition={{
-                repeat: Infinity,
-                duration: 6,
-                ease: "linear",
-                delay: index * 1.2,
               }}
             >
-              <span
-                className="bg-clip-text text-transparent"
-                style={{
-                  backgroundImage:
-                    "linear-gradient(90deg, #c49a6c, #f5deb3, #c49a6c)",
-                  backgroundSize: "200%",
-                  WebkitBackgroundClip: "text",
-                }}
-              >
-                <Counter value={stat.number} suffix={stat.suffix} />
-              </span>
-            </motion.h2>
+              <Counter
+                value={stat.number}
+                suffix={stat.suffix}
+                start={isInView}
+              />
+            </h2>
+
+            {/* Underline animation */}
+            <motion.div
+              className="mt-3 h-[2px] bg-[var(--accent)] rounded-full"
+              style={{ background: theme.accent }}
+              initial={{ width: 0 }}
+              animate={isInView ? { width: 40 } : { width: 0 }}
+              transition={{
+                duration: 0.6,
+                delay: 0.2 + i * 0.2,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+            />
 
             {/* Label */}
             <p
-              className="text-base tracking-wide"
+              className="mt-4 text-base md:text-lg tracking-wide"
               style={{
                 color: theme.textSecondary,
-                fontWeight: 400,
-                lineHeight: 1.8,
-                textTransform: "capitalize",
+                letterSpacing: "0.5px",
               }}
             >
               {stat.label}
             </p>
 
-            {/* Optional vertical divider (visible on desktop) */}
-            {index < stats.length - 1 && (
+            {/* Vertical divider */}
+            {i < stats.length - 1 && (
               <div
-                className="hidden sm:block absolute right-0 top-1/2 -translate-y-1/2 h-10 border-l opacity-20"
+                className="hidden sm:block absolute right-0 top-1/2 -translate-y-1/2 h-12 border-r opacity-30"
                 style={{ borderColor: theme.accent }}
               ></div>
             )}
@@ -135,6 +144,4 @@ const StatsStrip = () => {
       </div>
     </section>
   );
-};
-
-export default StatsStrip;
+}

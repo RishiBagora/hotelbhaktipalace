@@ -1,83 +1,108 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
-const Aboutsection = () => {
+const AboutSection = () => {
   return (
-    // Main container for the About Us section
-    // py-20 for vertical padding, px-4 for horizontal on mobile, sm:px-6 for tablet, lg:px-8 for desktop
-    // bg-white ensures a clean white background as in your image
-    <section className="bg-white py-20 px-4 sm:px-6 lg:px-8">
-      {/* Inner container to control max width and center the content */}
-      <div className="max-w-7xl mx-auto">
-        {/*
-          Grid layout for desktop/tablet: 2 columns
-          Flex layout for mobile: stacks items vertically (default flex behavior)
-          items-center to vertically align content in the middle
-          gap-8 for spacing between columns on larger screens, gap-12 for more vertical space on mobile
-        */}
-        <div className="md:grid md:grid-cols-2 md:items-center gap-8 md:gap-12 lg:gap-16">
-          {/*
-            Left Column: Image Placeholder
-            Hidden on very small screens if you want, but generally good to show it.
-            h-64 for fixed height on mobile, md:h-96 for larger height on desktop
-            bg-gray-200 to mimic the light gray placeholder in your image
-            flex items-center justify-center to center the icon
-          */}
-          <div className="w-full h-64 md:h-96 bg-gray-200 rounded-lg flex items-center justify-center mb-8 md:mb-0">
-            {/* Placeholder icon, replace with your actual image tag */}
+    <section className="relative bg-[#faf9f6] py-24 px-4 sm:px-8 lg:px-16 overflow-hidden">
+      {/* ---- Top Center Section Heading ---- */}
+      <div className="text-center mb-16">
+        <p
+          className="text-sm tracking-[0.35em] uppercase text-[#c49a6c] mb-3"
+          style={{ fontFamily: "Inter, sans-serif", fontWeight: 500 }}
+        >
+          About Us
+        </p>
+        <div className="h-[1px] w-20 bg-[#c49a6c] mx-auto opacity-40"></div>
+      </div>
+
+      {/* ---- Two Column Layout ---- */}
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 items-center gap-12 relative">
+        {/* Left: Image Wrapper (outer allows overflow) */}
+        <div className="relative w-full h-72 sm:h-96 rounded-2xl shadow-md overflow-visible">
+          {/* Inner Image (handles the rounded corners) */}
+          <div className="w-full h-full rounded-2xl overflow-hidden">
+            <img
+              src="https://lh3.googleusercontent.com/p/AF1QipM4ZFHDP5AJsf8-TdUlZATYfgKwMHsEPlZzNhIh=s1360-w1360-h1020-rw"
+              alt="About Hotel Bhakti Palace"
+              className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+            />
+            {/* Soft overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent"></div>
+          </div>
+
+          {/* ---- Revolving Text Circle ---- */}
+          <div className="absolute -bottom-15 -left-15 w-40 h-40 sm:w-48 sm:h-48">
             <svg
-              className="h-16 w-16 text-gray-400"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              aria-hidden="true"
+              viewBox="0 0 200 200"
+              className="animate-spin-slow"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-              />
+              <defs>
+                <path
+                  id="circlePath"
+                  d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"
+                />
+              </defs>
+
+              <text
+                fontSize="11"
+                fill="#c49a6c"
+                letterSpacing="3"
+                style={{
+                  fontFamily: "Inter, sans-serif",
+                  textTransform: "uppercase",
+                }}
+              >
+                <textPath href="#circlePath" startOffset="0%">
+                  ● Hotel Bhakti Palace ● Nathdwara ● Hotel Bhakti Palace ●
+                  Nathdwara ● Hotel Bhakti Palace ● Nathdwara ●
+                </textPath>
+              </text>
             </svg>
-            {/* If you have an actual image:
-            <img src="/path/to/your/image.jpg" alt="About Us" className="w-full h-full object-cover rounded-lg" />
-            */}
           </div>
+        </div>
 
-          {/* Right Column: Text Content */}
-          <div>
-            {/* Sub-heading "ABOUT US" */}
-            <p className="text-sm font-semibold text-[var(-txt)] uppercase tracking-wider mb-2">
-              ABOUT US
-            </p>
-            {/* Decorative underline, adjust width and color as needed */}
-            <div className="h-0.5 w-[40%] bg-zinc-600 mb-6"></div> {/* Added margin-bottom for spacing */}
+        {/* Right: Text Content */}
+        <div className="text-center md:text-left">
+          {/* Moved main heading here */}
+          <h2
+            className="text-3xl sm:text-4xl font-semibold text-[#1a1a1a] mb-6"
+            style={{
+              fontFamily: "Playfair Display, serif",
+              letterSpacing: "0.02em",
+            }}
+          >
+            The Best Holidays Start Here
+          </h2>
 
-            {/* Main Heading */}
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight mb-6">
-              The Best Holidays Start Here!
-            </h2>
+          <p
+            className="text-gray-600 text-base sm:text-lg leading-relaxed mb-8"
+            style={{
+              fontFamily: "Inter, sans-serif",
+              lineHeight: 1.8,
+              maxWidth: "95%",
+            }}
+          >
+            Experience divine comfort and serenity at{" "}
+            <span className="text-[#c49a6c] font-medium">
+              Hotel Bhakti Palace
+            </span>
+            , where hospitality meets devotion in the holy town of Nathdwara.
+            Just steps away from the revered Shree Nath Ji Temple, our hotel
+            offers elegant rooms, warm service, and tranquil spaces — the
+            perfect destination for spiritual travelers seeking luxury and
+            peace.
+          </p>
 
-            {/* Paragraph Text */}
-            <p className="mt-4 text-base sm:text-lg text-gray-600 leading-relaxed mb-8">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima at
-              quisquam eligendi placeat facere similique deserunt delectus nam
-              consectetur unde.
-            </p>
-
-            {/* CTA Button */}
-           
-            <Link to="/about" > <div
-              className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[var(--grn)] hover:bg-black md:py-4 md:text-lg md:px-10 transition duration-300 ease-in-out transform hover:-translate-y-1"
-            >
-              Read More 
-            </div></Link>
-            
-          </div>
+          <Link to="/aboutus">
+            <button className="inline-flex items-center justify-center px-8 py-3 border border-[#c49a6c] text-sm md:text-base font-medium rounded-full text-[#1a1a1a] hover:bg-[#c49a6c] hover:text-white transition-all duration-300 ease-in-out">
+              Read More
+            </button>
+          </Link>
         </div>
       </div>
     </section>
   );
 };
 
-export default Aboutsection;
+export default AboutSection;

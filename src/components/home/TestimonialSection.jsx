@@ -1,14 +1,13 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, EffectFade } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
+import { motion } from "framer-motion";
+
 import "swiper/css";
 import "swiper/css/pagination";
-import "swiper/css/effect-fade";
 
-// Theme colors
 const theme = {
-  background: "#ffffff",
-  mutedBackground: "#faf9f6",
+  background: "#faf9f6",
   textPrimary: "#1a1a1a",
   textSecondary: "#6b6b6b",
   accent: "#c49a6c",
@@ -17,134 +16,108 @@ const theme = {
 const testimonials = [
   {
     quote:
-      "My stay at Hotel Bhakyi Palace was truly divine. The hospitality, cleanliness, and proximity to the Shree Nath Ji Temple made it unforgettable.",
+      "My stay at Hotel Bhakyi Palace was truly divine — the warmth, cleanliness and hospitality made my visit unforgettable.",
     author: "Priya Sharma",
     location: "Ahmedabad, Gujarat",
-    image: "/images/guest1.jpg",
   },
   {
     quote:
-      "Pangat’s dining experience was phenomenal — authentic Rajasthani taste with five-star presentation. A must-visit in Nathdwara.",
+      "Pangat delivers an exceptional dining experience — rich flavours, elegant ambiance, and true Rajasthani heritage.",
     author: "Vikas Mehta",
     location: "Jaipur, Rajasthan",
-    image: "/images/guest2.jpg",
   },
   {
     quote:
-      "Peaceful, spiritual, and premium. The perfect place for anyone visiting Shree Nath Ji Temple.",
+      "A peaceful and spiritually uplifting stay. Perfect for anyone visiting Shree Nath Ji Temple.",
     author: "Ruchi Patel",
     location: "Surat, Gujarat",
-    image: "/images/guest3.jpg",
   },
 ];
 
-const TestimonialSection = () => {
+export default function TestimonialSection() {
   return (
     <section
-      className="py-20 text-center relative overflow-hidden"
-      style={{
-        backgroundColor: theme.mutedBackground,
-        fontFamily: "Inter, sans-serif",
-      }}
+      className="relative py-32 overflow-hidden"
+      style={{ background: theme.background }}
     >
-      {/* Section Label */}
-      <div className="mb-3 uppercase tracking-[0.2em] text-sm font-semibold"
-        style={{ color: theme.accent }}
-      >
-        GUEST REVIEWS
+      {/* Header */}
+      <div className="text-center">
+        <p
+          className="uppercase tracking-[0.25em] text-sm font-semibold"
+          style={{ color: theme.accent }}
+        >
+          Guest Reviews
+        </p>
+
+        <h2
+          className="text-4xl md:text-6xl font-serif mt-2 mb-4"
+          style={{
+            color: theme.textPrimary,
+            fontFamily: "Playfair Display, serif",
+          }}
+        >
+          What Our Guests Say
+        </h2>
+
+        <div
+          className="h-[2px] w-20 mx-auto mb-20 rounded-full"
+          style={{ background: theme.accent }}
+        />
       </div>
 
-      {/* Section Title */}
-      <h2
-        className="text-3xl md:text-5xl font-serif mb-6"
-        style={{
-          color: theme.textPrimary,
-          fontFamily: "Playfair Display, serif",
-          fontWeight: 600,
-        }}
-      >
-        What Our Guests Say
-      </h2>
-
-      {/* Gold Accent Line */}
-      <div
-        className="w-16 h-[2px] mx-auto mb-12 rounded-full"
-        style={{ backgroundColor: theme.accent }}
-      ></div>
-
-      {/* Swiper Carousel */}
-      <div className="relative max-w-3xl mx-auto px-6">
+      {/* Swiper */}
+      <div className="max-w-4xl mx-auto px-6">
         <Swiper
-          modules={[Autoplay, Pagination, EffectFade]}
-          autoplay={{
-            delay: 5000,
-            disableOnInteraction: false,
-          }}
-          effect="fade"
-          loop={true}
+          modules={[Autoplay, Pagination]}
+          autoplay={{ delay: 6000, disableOnInteraction: false }}
+          loop
           pagination={{ clickable: true }}
-          className="select-text"
+          slidesPerView={1}
+          speed={700}
         >
-          {testimonials.map((t, index) => (
-            <SwiperSlide key={index}>
-              <div
-                className="p-8 bg-white rounded-2xl shadow-md flex flex-col items-center text-center transition-all duration-700 ease-in-out"
-                style={{
-                  color: theme.textPrimary,
-                  fontFamily: "Inter, sans-serif",
+          {testimonials.map((t, i) => (
+            <SwiperSlide key={i}>
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
+                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                transition={{
+                  duration: 0.8,
+                  ease: [0.16, 1, 0.3, 1],
                 }}
+                className="flex flex-col items-center text-center min-h-[260px] md:min-h-[300px] px-4 md:px-16"
               >
-                {/* Guest Image */}
-                {t.image && (
-                  <img
-                    src={t.image}
-                    alt={t.author}
-                    className="w-16 h-16 rounded-full object-cover border-2 mb-4"
-                    style={{ borderColor: theme.accent }}
-                  />
-                )}
-
-                {/* Quote */}
                 <p
-                  className="text-lg italic leading-relaxed mb-6"
+                  className="text-2xl md:text-3xl italic font-serif mb-8 max-w-3xl leading-relaxed"
                   style={{
-                    color: theme.textSecondary,
-                    lineHeight: 1.8,
+                    color: theme.textPrimary,
+                    fontFamily: "Playfair Display, serif",
+                    lineHeight: 1.7,
                   }}
                 >
                   “{t.quote}”
                 </p>
 
-                {/* Author */}
                 <h3
-                  className="text-lg font-semibold"
+                  className="text-lg font-semibold tracking-wide"
                   style={{ color: theme.textPrimary }}
                 >
                   {t.author}
                 </h3>
 
-                {/* Location */}
-                {t.location && (
-                  <p
-                    className="text-sm mt-1"
-                    style={{ color: theme.accent }}
-                  >
-                    {t.location}
-                  </p>
-                )}
-              </div>
+                <p className="text-sm mt-1" style={{ color: theme.accent }}>
+                  {t.location}
+                </p>
+              </motion.div>
             </SwiperSlide>
           ))}
         </Swiper>
       </div>
 
-      {/* Subtle Background Overlay (for depth) */}
+      {/* Marble Texture */}
       <div
-        className="absolute inset-0 opacity-[0.07] bg-[url('https://www.transparenttextures.com/patterns/marble.png')] bg-repeat"
-        aria-hidden="true"
-      ></div>
+        className="absolute inset-0 opacity-[0.05] bg-[url('https://www.transparenttextures.com/patterns/marble.png')] pointer-events-none"
+      />
     </section>
   );
-};
-
-export default TestimonialSection;
+}
