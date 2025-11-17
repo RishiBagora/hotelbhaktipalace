@@ -144,14 +144,16 @@ export default function App() {
                 ...navLinks,
                 ...rightLinks,
               ].map((link) => (
-                <a
+                <div
                   key={link}
-                  href={`#${link.toLowerCase().replace(" ", "-")}`}
+                 
                   className="text-sm uppercase tracking-wide text-[#1a1a1a] hover:text-[#c49a6c] transition-colors duration-300"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  {link}
-                </a>
+                  <Link to={link === "Home" ? "/" : `/${link.toLowerCase().replace(" ", "")}`}>
+                {link}
+                </Link>
+                </div>
               ))}
               <a
                 href="#inquire-now"

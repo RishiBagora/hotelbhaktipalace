@@ -26,7 +26,7 @@ const Home = () => {
         <DiningSection/>
         <StatsStrip/>
        <TestimonialSection/>
-       <FooterSection/>
+       
     </div>
   )
 }
