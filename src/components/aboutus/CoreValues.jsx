@@ -2,101 +2,105 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const CoreValues = () => {
-  // Core values data
   const values = [
     {
-      icon: "🌿",
       title: "Authentic Hospitality",
       description:
-        "Experience the warmth of Rajasthani tradition blended with personalized, world-class service.",
+        "Rooted in the warmth of Rajasthani tradition, our hospitality is sincere, personal, and guided by timeless values of care and respect.",
     },
     {
-      icon: "🕉️",
       title: "Spiritual Serenity",
       description:
-        "Located near the revered Shree Nath Ji Temple, we offer a tranquil space for reflection and devotion.",
+        "Located close to the sacred Shree Nath Ji Temple, Bhakti Palace offers an atmosphere of calm, reflection, and inner peace.",
     },
     {
-      icon: "🏛️",
       title: "Cultural Heritage",
       description:
-        "Our architecture and interiors celebrate Nathdwara’s art, culture, and timeless elegance.",
+        "Our spaces are inspired by Nathdwara’s rich artistic legacy, blending traditional aesthetics with refined architectural elegance.",
     },
     {
-      icon: "✨",
       title: "Modern Comfort",
       description:
-        "Every room and experience at Bhakti Palace is crafted to combine modern amenities with soulful charm.",
+        "Thoughtfully designed rooms and amenities ensure a stay that is comfortable, effortless, and quietly luxurious.",
     },
   ];
 
+  const fadeUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        delay: i * 0.15,
+        ease: [0.16, 1, 0.3, 1],
+      },
+    }),
+  };
+
   return (
-    <section className="bg-[#faf9f6] py-20 md:py-28">
-      {/* Container */}
-      <div className="max-w-6xl mx-auto px-6 text-center">
-        {/* --- Section Heading --- */}
-        <motion.p
-          className="uppercase tracking-[0.25em] text-[#c49a6c] text-sm font-semibold mb-3"
-          style={{ fontFamily: "Inter, sans-serif" }}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          Our Philosophy
-        </motion.p>
+    <section className="bg-[#faf9f6] py-24 md:py-32">
+      <div className="max-w-6xl mx-auto px-6">
 
-        <motion.h2
-          className="text-3xl md:text-5xl font-semibold text-[#1a1a1a] mb-6"
-          style={{ fontFamily: "Playfair Display, serif" }}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-        >
-          The Heart of Bhakti Palace
-        </motion.h2>
+        {/* ===== Section Header ===== */}
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          <motion.span
+            className="block text-xs tracking-[0.35em] uppercase text-[#c49a6c] mb-4"
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            Our Philosophy
+          </motion.span>
 
-        <motion.p
-          className="text-[#6d6d6d] text-base md:text-lg max-w-3xl mx-auto mb-12 leading-relaxed"
-          style={{ fontFamily: "Inter, sans-serif", lineHeight: "1.8" }}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-        >
-          Rooted in the sacred aura of Nathdwara, our values define the soul of
-          our hospitality — blending devotion, warmth, and sophistication to
-          offer guests a stay that feels divine and personal.
-        </motion.p>
+          <motion.h2
+            className="text-3xl md:text-5xl font-serif text-[#1a1a1a] mb-6"
+            style={{ fontFamily: "Playfair Display, serif" }}
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.15 }}
+            viewport={{ once: true }}
+          >
+            The Heart of Bhakti Palace
+          </motion.h2>
 
-        {/* --- Value Cards Grid --- */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-10">
+          <motion.p
+            className="text-[#6d6d6d] text-base md:text-lg leading-tight"
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            viewport={{ once: true }}
+          >
+            Guided by devotion, culture, and thoughtful comfort, our values shape
+            every experience — offering guests a stay that feels calm, meaningful,
+            and deeply personal.
+          </motion.p>
+        </div>
+
+        {/* ===== Values Grid ===== */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-14 gap-y-16">
           {values.map((value, index) => (
             <motion.div
               key={index}
-              className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition-all duration-500 flex flex-col items-center text-center hover:-translate-y-1"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
+              custom={index}
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
               viewport={{ once: true }}
+              className="relative"
             >
-              {/* Icon */}
-              <div className="text-4xl mb-4 text-[#c49a6c]">{value.icon}</div>
+              {/* Subtle top accent */}
+              <div className="w-10 h-[1px] bg-[#c49a6c] mb-6" />
 
-              {/* Title */}
               <h3
-                className="text-xl font-semibold text-[#1a1a1a] mb-3"
+                className="text-xl font-serif text-[#1a1a1a] mb-4"
                 style={{ fontFamily: "Playfair Display, serif" }}
               >
                 {value.title}
               </h3>
 
-              {/* Description */}
-              <p
-                className="text-[#6d6d6d] text-sm leading-relaxed"
-                style={{ fontFamily: "Inter, sans-serif" }}
-              >
+              <p className="text-sm md:text-base text-[#6d6d6d] leading-tight">
                 {value.description}
               </p>
             </motion.div>

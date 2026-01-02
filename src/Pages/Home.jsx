@@ -7,14 +7,14 @@ import RoomsAndSuites from '../components/home/RoomsAndSuites'
 import AmenitiesSection from '../components/home/AmenitiesSection'
 import LocationSection from '../components/home/LocationSection'
 import DiningSection from '../components/home/DiningSection'
-import StatsStrip from '../components/home/StatsStrip'
+import ExperienceStats from '../components/aboutus/ExperienceStats'
 import TestimonialSection from '../components/home/TestimonialSection'
 import FooterSection from '../components/general/FooterSection'
 // import AboutUs from '../components/home/AboutUs'
 
 const Home = () => {
   return (
-    <div className='w-screen h-screen bg-[#faf9f6]'>
+    <div className='w-screen min-h-screen bg-[#faf9f6]'>
         {/* <Navbar/> */}
         <Hotelname/>
         <Background/>
@@ -24,7 +24,7 @@ const Home = () => {
         <RoomsAndSuites/>
         <AmenitiesSection/>
         <DiningSection/>
-        <StatsStrip/>
+        <ExperienceStats/>
        <TestimonialSection/>
        
     </div>

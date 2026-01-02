@@ -40,7 +40,7 @@ export default function App() {
     }, []);
 
     const navLinks = ["Home", "About Us", "Attractions"];
-    const rightLinks = ["Blogs", "Contact"];
+    const rightLinks = ["Rooms", "Contact"];
 
     return (
       <nav
@@ -79,7 +79,7 @@ export default function App() {
             <div>
               <img 
                 className="h-14 w-auto" 
-                src="./images/bhaktilogo.png" 
+                src="/images/bhaktilogo.png" 
                 alt="Hotel Bhakti Palace"
                 onError={(e) => { e.target.src = 'https://placehold.co/160x50/00000000/1a1a1a?text=Bhakti+Palace&font=playfair+display'; e.target.onerror = null; }}
               />

@@ -150,7 +150,7 @@ const AboutStory = () => {
           {/* Paragraphs */}
           <p
             className="text-[#6d6d6d] text-base md:text-lg leading-relaxed mb-4"
-            style={{ fontFamily: "Inter, sans-serif", lineHeight: "1.9" }}
+            style={{ fontFamily: "Inter, sans-serif", lineHeight: "1.2" }}
           >
             Nestled in the divine city of Nathdwara, Hotel Bhakti Palace is more
             than just a destination — it’s a sanctuary for the soul. Our story
@@ -160,7 +160,7 @@ const AboutStory = () => {
 
           <p
             className="text-[#6d6d6d] text-base md:text-lg leading-relaxed mb-4"
-            style={{ fontFamily: "Inter, sans-serif", lineHeight: "1.9" }}
+            style={{ fontFamily: "Inter, sans-serif", lineHeight: "1.2" }}
           >
             Inspired by the timeless charm of Shree Nath Ji Temple and the
             cultural richness of Rajasthan, Bhakti Palace stands as a symbol of
@@ -171,20 +171,13 @@ const AboutStory = () => {
 
           <p
             className="text-[#6d6d6d] text-base md:text-lg leading-relaxed"
-            style={{ fontFamily: "Inter, sans-serif", lineHeight: "1.9" }}
+            style={{ fontFamily: "Inter, sans-serif", lineHeight: "1.2" }}
           >
             Here, tradition and tranquility meet contemporary elegance — offering
             guests not just a stay, but a soulful experience to remember.
           </p>
 
-          {/* Button */}
-          <Link
-            to="/about"
-            className="inline-block border border-[#c49a6c] text-[#c49a6c] hover:bg-[#c49a6c] hover:text-white transition-all duration-500 rounded-full px-6 py-3 font-medium mt-6"
-            style={{ fontFamily: "Inter, sans-serif" }}
-          >
-            Know More
-          </Link>
+          
         </motion.div>
 
         {/* --- Right Column: Image --- */}

@@ -7,7 +7,7 @@ import ExperienceStats from '../components/aboutus/ExperienceStats'
 import AboutCTA from '../components/aboutus/AboutCTA'
 const Aboutus = () => {
   return (
-    <div className='w-screen h-screen overflow-x-hidden'>
+    <div className='w-screen min-h-screen overflow-x-hidden'>
       <AboutHero/>
       <AboutStory/>
       <CoreValues/>

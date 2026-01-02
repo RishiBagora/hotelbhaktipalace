@@ -31,37 +31,46 @@ const AboutSection = () => {
           </div>
 
           {/* ---- Revolving Text Circle ---- */}
-          <div className="absolute -bottom-15 -left-15 w-40 h-40 sm:w-48 sm:h-48">
-            <svg
-              viewBox="0 0 200 200"
-              className="animate-spin-slow"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <defs>
-                <path
-                  id="circlePath"
-                  d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"
-                />
-              </defs>
+          <div
+  className="
+    absolute
+    -bottom-6 -left-6
+    sm:-bottom-12 sm:-left-12
+    md:-bottom-15 md:-left-15
+    w-28 h-28
+    sm:w-36 sm:h-36
+    md:w-40 md:h-40
+    pointer-events-none
+  "
+>
+  <svg
+    viewBox="0 0 200 200"
+    className="animate-spin-slow w-full h-full"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <defs>
+      <path
+        id="circlePath"
+        d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"
+      />
+    </defs>
 
-              <text
-                fontSize="11"
-                fill="#c49a6c"
-                letterSpacing="3"
-                style={{
-                  fontFamily: "Inter, sans-serif",
-                  textTransform: "uppercase",
-                }}
-              >
-                <textPath href="#circlePath" startOffset="0%">
-                  ● Hotel Bhakti Palace ● Nathdwara ● Hotel Bhakti Palace ●
-                  Nathdwara ● Hotel Bhakti Palace ● Nathdwara ●
-                </textPath>
-              </text>
-            </svg>
-          </div>
+    <text
+      fontSize="11"
+      fill="#c49a6c"
+      letterSpacing="3"
+      style={{
+        fontFamily: "Inter, sans-serif",
+        textTransform: "uppercase",
+      }}
+    >
+      <textPath href="#circlePath" startOffset="0%">
+        ● Hotel Bhakti Palace ● Nathdwara ● Hotel Bhakti Palace ● Nathdwara ●
+      </textPath>
+    </text>
+  </svg>
+</div>
         </div>
-
         {/* Right: Text Content */}
         <div className="text-center md:text-left">
           {/* Moved main heading here */}

@@ -3,6 +3,7 @@
 :root {
   --grn: #434B34;
   --txt: #3a3a3a;
+    min-height: 100vh;
   /* --heading-font: "Poppins", sans-serif; */
 }
 html {
@@ -10,6 +11,30 @@ html {
 }
 nav {
   will-change: transform;
+}
+html, body {
+ width: 100%;
+ height: auto !important;
+  overflow-y: auto !important;
+  overflow-x: hidden;
+}
+html{
+  /* scroll-behavior: smooth; */
+}
+html.lenis {
+  height: auto;
+}
+body{
+  overscroll-behavior: none;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
 }
 
 
