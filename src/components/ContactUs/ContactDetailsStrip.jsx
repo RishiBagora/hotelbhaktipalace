@@ -40,16 +40,16 @@ const ContactDetailsStrip = ({ items }) => {
         {
             icon: <PiPhoneLight className="w-7 h-7" />,
             label: "Reservation Phone",
-            value: "+91 98765 43210",
+            value: "+91 97725 78699",
             subtext: "Available 7:00 AM – 11:00 PM IST",
-            link: "tel:+919876543210",
+            link: "tel:+919772578699",
         },
         {
             icon: <PiWhatsappLogoLight className="w-7 h-7" />,
             label: "WhatsApp Support",
-            value: "+91 98765 43210",
+            value: "+91 97725 78699",
             subtext: "Instant replies for quick queries",
-            link: "https://wa.me/919876543210",
+            link: "https://wa.me/919772578699",
         },
         {
             icon: <VscMail className="w-7 h-7" />,
@@ -107,7 +107,7 @@ const ContactDetailsStrip = ({ items }) => {
                 </motion.div>
 
                 {/* Separator */}
-                <div className="w-full h-px bg-[var(--soft_line)] my-10 md:my-14" />
+                <div className="w-full h-px bg-[var(--soft_line)] my-10 md:my-0" />
 
                 {/* Contact Blocks */}
                 <motion.div

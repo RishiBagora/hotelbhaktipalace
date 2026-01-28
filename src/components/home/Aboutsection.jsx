@@ -58,14 +58,14 @@ const AboutSection = () => {
     <text
       fontSize="11"
       fill="#c49a6c"
-      letterSpacing="3"
+      letterSpacing="2"
       style={{
         fontFamily: "Inter, sans-serif",
         textTransform: "uppercase",
       }}
     >
       <textPath href="#circlePath" startOffset="0%">
-        ● Hotel Bhakti Palace ● Nathdwara ● Hotel Bhakti Palace ● Nathdwara ●
+        ● Hotel Bhakti ● Nathdwara ● Hotel Bhakti ● Nathdwara ●
       </textPath>
     </text>
   </svg>

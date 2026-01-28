@@ -97,7 +97,7 @@ export default function MapSection() {
                   height: "clamp(360px, 45vh, 680px)",
                   border: "0",
                 }}
-                src="https://www.google.com/maps?q=Shree+Nath+Ji+Temple+Nathdwara&output=embed"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d538.2940795823679!2d73.81645413503497!3d24.929281825144567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39680d007e80eb93%3A0xc9ec800f5ba7c048!2sShrinathji%20Temple%20Gate%202!5e1!3m2!1sen!2sin!4v1767439272976!5m2!1sen!2sin"
               ></iframe>
             </div>
           </div>
@@ -133,7 +133,7 @@ export default function MapSection() {
           </p>
 
           <a
-            href="https://www.google.com/maps/search/?api=1&query=Shree+Nath+Ji+Temple+Nathdwara"
+            href="https://maps.app.goo.gl/Vf3BUrDe5iuiYDPQA"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-4 inline-block text-[var(--accent)] underline underline-offset-4 hover:opacity-75 transition-all duration-300"

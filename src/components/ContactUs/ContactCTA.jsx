@@ -119,7 +119,7 @@ export default function ContactCTA() {
           <motion.a
             variants={fadeUp}
             custom={3}
-            href="tel:+919876543210"
+            href="tel:+919772578699"
             target="_blank"
             rel="noopener noreferrer"
             className="px-10 py-4 rounded-full bg-[var(--accent)] text-white uppercase tracking-wide text-sm hover:bg-opacity-90 transition-all duration-500"
@@ -132,7 +132,7 @@ export default function ContactCTA() {
           <motion.a
             variants={fadeUp}
             custom={4}
-            href="https://wa.me/919876543210"
+            href="https://wa.me/919772578699"
             target="_blank"
             rel="noopener noreferrer"
             className="px-10 py-4 rounded-full border border-[var(--accent)] text-[var(--accent)] uppercase tracking-wide text-sm hover:bg-[var(--accent)] hover:text-white transition-all duration-500"

@@ -102,7 +102,7 @@ export default function App() {
                 </div>
               ))}
               <a
-                href="#inquire-now"
+                href="tel:+919772578699"
                 className="text-sm uppercase tracking-wide border border-[#c49a6c] text-[#c49a6c] rounded-full px-4 py-1 hover:bg-[#c49a6c] hover:text-white transition-all duration-300"
               >
                 Inquire Now

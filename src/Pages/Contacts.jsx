@@ -8,7 +8,7 @@ import ContactCTA from '../components/ContactUs/ContactCTA'
 const Contacts = () => {
   return (
     <div>
-      <ContactHero/>
+      
       <ContactDetailsStrip/>
       <ContactForm/>
       <MapSection/>

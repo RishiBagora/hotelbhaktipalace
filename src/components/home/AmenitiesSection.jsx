@@ -145,7 +145,7 @@ const AmenityItem = ({ Icon, title, index }) => {
 export default function AmenitiesSection() {
   return (
     <section
-      className="relative overflow-hidden py-15 md:py-32"
+      className="relative overflow-hidden py-15 md:pt-32"
       style={{
         background: "var(--bg)",
         fontFamily: "'Inter', sans-serif",

@@ -94,14 +94,14 @@ export default function App() {
               </h3>
               <div className="space-y-3">
                 <a 
-                  href="tel:+919876543210" 
+                  href="tel:+919772578699" 
                   className="flex items-center justify-center md:justify-start gap-3 text-sm transition-colors duration-300"
                   style={{ color: 'var(--text-secondary)' }}
                   onMouseOver={(e) => e.currentTarget.style.color = 'var(--accent-gold)'}
                   onMouseOut={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}
                 >
                   <PhoneIcon className="w-4 h-4" />
-                  <span>+91 98765 43210</span>
+                  <span>+91 97725 78699</span>
                 </a>
                 <a 
                   href="mailto:reservations@hotelbhaktypalace.com" 
