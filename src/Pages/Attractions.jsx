@@ -1,5 +1,5 @@
 import React from 'react'
-import AttractionHero from '../Components/attraction/AttractionHero'
+import AttractionHero from '../components/attraction/AttractionHero'
 import WhyVisitNathdwara from '../components/attraction/WhyVisitNathdwara'
 import AttractionsFeed from '../components/attraction/AttractionsFeed'
 import AttractionsPageCTA from '../components/attraction/AttractionsPageCTA'
