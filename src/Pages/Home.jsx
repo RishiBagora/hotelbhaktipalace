@@ -14,7 +14,7 @@ import FooterSection from '../components/general/FooterSection'
 
 const Home = () => {
   return (
-    <div className='w-screen min-h-screen bg-[#faf9f6]'>
+    <div className='w-screen  bg-[#faf9f6]'>
         {/* <Navbar/> */}
         <Hotelname/>
         <Background/>

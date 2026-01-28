@@ -75,3 +75,80 @@ body{
 *::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
 }
+@import "tailwindcss";
+
+/* ---------------- ROOT ---------------- */
+:root {
+  --grn: #434B34;
+  --txt: #3a3a3a;
+  min-height: 100vh;
+}
+
+/* ---------------- HTML / BODY SCROLL FIX ---------------- */
+html, body {
+  width: 100%;
+  height: auto !important;
+  overflow-y: auto !important;
+  overflow-x: hidden;
+}
+
+/* ---------------- REMOVE LENIS SCROLL LOCK ---------------- */
+.lenis-stopped {
+  overflow: auto !important;
+}
+
+/* ---------------- OPTIONAL LENIS SUPPORT ---------------- */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+/* ---------------- BODY FIX ---------------- */
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overscroll-behavior-y: auto; /* was none ❌ */
+}
+
+/* ---------------- NAV PERFORMANCE ---------------- */
+nav {
+  will-change: transform;
+}
+
+/* ---------------- SCROLLBAR (HIDDEN BUT WORKING) ---------------- */
+body {
+  scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+/* ---------------- ANIMATIONS ---------------- */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 1s ease-out forwards;
+}
