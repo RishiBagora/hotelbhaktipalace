@@ -3,8 +3,8 @@ import React from 'react'
 const Hotelname = () => {
   return (
     <div className='w-full  z-30 h-[20vh] flex flex-col justify-center items-center leading-[5vh] text-center'>
-        <h1 className='text-[300%] md:text-[450%] font-bold text-[#c49a6c] '>Hotel Bhakti</h1>
-        <p className='mt-4 md:text[150%] text-white'>Shreenath Ji</p>
+       <img className='w-[20%] absolute' src="/images/hotellogo.png" alt="" />
+        <p className='mt-50 md:text[150%] text-[#c49a6c]'>Shreenath Ji</p>
     </div>
   )
 }

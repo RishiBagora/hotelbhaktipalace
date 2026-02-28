@@ -26,12 +26,7 @@ const testimonials = [
     author: "Vikas Mehta",
     location: "Jaipur, Rajasthan",
   },
-  {
-    quote:
-      "A peaceful and spiritually uplifting stay. Perfect for anyone visiting Shree Nath Ji Temple.",
-    author: "Ruchi Patel",
-    location: "Surat, Gujarat",
-  },
+  
 ];
 
 export default function TestimonialSection() {

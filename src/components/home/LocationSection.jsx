@@ -58,7 +58,7 @@ const LocationSection = () => {
           style={{ fontFamily: "Inter, sans-serif", lineHeight: 1.85 }}
         >
           Located in the holy town of Nathdwara,{" "}
-          <span className="text-[#c49a6c] font-medium">Hotel Bhakti Palace</span>{" "}
+          <span className="text-[#c49a6c] font-medium">Hotel Bhakti </span>{" "}
           stands just a short walk from the sacred Shree Nath Ji Temple. Embraced
           by the spiritual aura of this divine city, our hotel offers the perfect
           blend of peace, devotion, and comfort. Wake up to the sound of temple

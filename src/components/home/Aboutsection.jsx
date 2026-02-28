@@ -23,7 +23,7 @@ const AboutSection = () => {
           <div className="w-full h-full rounded-2xl overflow-hidden">
             <img
               src="https://lh3.googleusercontent.com/p/AF1QipM4ZFHDP5AJsf8-TdUlZATYfgKwMHsEPlZzNhIh=s1360-w1360-h1020-rw"
-              alt="About Hotel Bhakti Palace"
+              alt="About Hotel Bhakti"
               className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
             />
             {/* Soft overlay */}
@@ -94,7 +94,7 @@ const AboutSection = () => {
           >
             Experience divine comfort and serenity at{" "}
             <span className="text-[#c49a6c] font-medium">
-              Hotel Bhakti Palace
+              Hotel Bhakti
             </span>
             , where hospitality meets devotion in the holy town of Nathdwara.
             Just steps away from the revered Shree Nath Ji Temple, our hotel
