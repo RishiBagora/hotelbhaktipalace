@@ -1,6 +1,6 @@
 import React from 'react'
 // import Navbar from '../components/home/Navbar'
-import HotelName from "../components/home/HotelName.jsx";
+import HotelName from '../components/home/Hotelname'
 import Background from '../components/home/Background'
 import Aboutsection from '../components/home/Aboutsection'
 import RoomsAndSuites from '../components/home/RoomsAndSuites'
@@ -16,7 +16,7 @@ const Home = () => {
   return (
     <div className='w-screen  bg-[#faf9f6]'>
         {/* <Navbar/> */}
-        <HotelName/>
+          <HotelName/>
         <Background/>
         <Aboutsection/> 
         <LocationSection/>
