@@ -1,6 +1,6 @@
 import React from 'react'
 // import Navbar from '../components/home/Navbar'
-import HotelName from '../components/home/HotelName'
+import HotelName from "../components/home/HotelName.jsx";
 import Background from '../components/home/Background'
 import Aboutsection from '../components/home/Aboutsection'
 import RoomsAndSuites from '../components/home/RoomsAndSuites'
@@ -9,7 +9,7 @@ import LocationSection from '../components/home/LocationSection'
 import DiningSection from '../components/home/DiningSection'
 import ExperienceStats from '../components/aboutus/ExperienceStats'
 import TestimonialSection from '../components/home/TestimonialSection'
-import FooterSection from '../components/general/FooterSection'
+// import FooterSection from '../components/general/FooterSection'
 // import AboutUs from '../components/home/AboutUs'
 
 const Home = () => {
