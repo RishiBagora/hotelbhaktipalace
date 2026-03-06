@@ -19,40 +19,40 @@ import ScrollToTop from './components/general/ScrollToTop'
 const App = () => {
  const location = useLocation();
 
-  // useEffect(() => {
-  //   // 🔴 kill old instance (VERY IMPORTANT)
-  //   if (window.lenis) {
-  //     window.lenis.destroy();
-  //     window.lenis = null;
-  //   }
+  useEffect(() => {
+    // 🔴 kill old instance (VERY IMPORTANT)
+    if (window.lenis) {
+      window.lenis.destroy();
+      window.lenis = null;
+    }
 
-  //   const lenis = new Lenis({
-  //     lerp: 0.12,          // 👈 KEY: stable & smooth
-  //     smoothWheel: true,
-  //     smoothTouch: false, // mobile pe native better
-  //     infinite: false,
-  //   });
+    const lenis = new Lenis({
+      lerp: 0.02,          // 👈 KEY: stable & smooth
+      smoothWheel: true,
+      smoothTouch: false, // mobile pe native better
+      infinite: false,
+    });
 
-  //   window.lenis = lenis;
+    window.lenis = lenis;
 
-  //   let rafId;
-  //   const raf = (time) => {
-  //     lenis.raf(time);
-  //     rafId = requestAnimationFrame(raf);
-  //   };
-  //   rafId = requestAnimationFrame(raf);
+    let rafId;
+    const raf = (time) => {
+      lenis.raf(time);
+      rafId = requestAnimationFrame(raf);
+    };
+    rafId = requestAnimationFrame(raf);
 
-  //   return () => {
-  //     cancelAnimationFrame(rafId);
-  //     lenis.destroy();
-  //     window.lenis = null;
-  //   };
-  // }, []);
+    return () => {
+      cancelAnimationFrame(rafId);
+      lenis.destroy();
+      window.lenis = null;
+    };
+  }, []);
 
-  // // 🔝 route change → instant top (NO animation)
-  // useEffect(() => {
-  //   window.lenis?.scrollTo(0, { immediate: true });
-  // }, [location.pathname]);
+  // 🔝 route change → instant top (NO animation)
+  useEffect(() => {
+    window.lenis?.scrollTo(0, { immediate: true });
+  }, [location.pathname]);
 
   return (
     <>

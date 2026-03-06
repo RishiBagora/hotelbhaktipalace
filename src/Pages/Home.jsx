@@ -1,6 +1,6 @@
 import React from 'react'
 // import Navbar from '../components/home/Navbar'
-import Hotelname from '../components/home/Hotelname'
+import Hotelname from '../components/home/HotelName'
 import Background from '../components/home/Background'
 import Aboutsection from '../components/home/Aboutsection'
 import RoomsAndSuites from '../components/home/RoomsAndSuites'

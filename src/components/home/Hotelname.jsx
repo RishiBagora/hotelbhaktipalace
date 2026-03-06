@@ -1,12 +1,34 @@
-import React from 'react'
+import React from 'react';
 
-const Hotelname = () => {
+const HotelName = () => {
   return (
-    <div className='w-full  z-30 h-[20vh] flex flex-col justify-center items-center leading-[5vh] text-center'>
-       <img className='w-[20%] absolute' src="/images/hotellogo.png" alt="" />
-        <p className='mt-50 md:text[150%] text-[#c49a6c]'>Shreenath Ji</p>
-    </div>
-  )
-}
+    <div className="absolute w-full h-[30vh] md:h-[40vh] flex flex-col justify-center items-center text-center px-4">
+      {/* Logo Container: Scaled for better visibility */}
+      <div className="z-20 mb-6">
+        <img 
+          className="w-40 md:w-64 lg:w-80 object-contain transition-transform duration-700 hover:scale-105" 
+          src="/images/hotellogo.png" 
+          alt="Hotel Logo" 
+        />
+      </div>
 
-export default Hotelname
+      {/* Tagline: Refined typography and spacing */}
+      <div className="z-20">
+        <p className="
+          text-xl md:text-3xl lg:text-3xl 
+          
+          text-[#c49a6c] 
+            font-sans tracking-widest
+        "
+        >
+          Stay Close To ShreeNath Ji
+        </p>
+        
+        {/* Subtle decorative divider (Optional but adds "Perfection") */}
+        <div className="mt-4 w-24 h-[1px] bg-[#c49a6c] mx-auto opacity-50"></div>
+      </div>
+    </div>
+  );
+};
+
+export default HotelName;
