@@ -27,7 +27,7 @@ const App = () => {
     }
 
     const lenis = new Lenis({
-      lerp: 0.02,          // 👈 KEY: stable & smooth
+      lerp: 0.05,          // 👈 KEY: stable & smooth
       smoothWheel: true,
       smoothTouch: false, // mobile pe native better
       infinite: false,

@@ -158,3 +158,10 @@ body::-webkit-scrollbar {
   font-weight: 400;
   font-style: normal;
 }
+.animate-spin-slow {
+  animation: spin 18s linear infinite;
+}
+::selection {
+  background: var(--txt);
+  color: white;
+}
