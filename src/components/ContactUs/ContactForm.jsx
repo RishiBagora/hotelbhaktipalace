@@ -1,24 +1,21 @@
-// ContactForm.jsx
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 20, filter: "blur(6px)" },
-  visible: {
-    opacity: 1,
-    y: 0,
-    filter: "blur(0px)",
-    transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] },
+const maskReveal = {
+  hidden: { y: "100%", opacity: 0 },
+  visible: { 
+    y: "0%", 
+    opacity: 1, 
+    transition: { duration: 1, ease: [0.16, 1, 0.3, 1] } 
   },
 };
 
-const stagger = {
-  hidden: {},
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
   visible: {
-    transition: {
-      staggerChildren: 0.12,
-      delayChildren: 0.06,
-    },
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
   },
 };
 
@@ -30,7 +27,7 @@ export default function ContactForm() {
     checkInDate: "",
     checkOutDate: "",
     guests: "",
-    subject: "",
+    subject: "Hotel Booking Enquiry",
     message: "",
   });
 
@@ -43,22 +40,19 @@ export default function ContactForm() {
 
   const validate = () => {
     if (!form.fullName.trim()) return "Please enter your full name.";
-    if (!form.phone.trim()) return "Please provide a phone number.";
-    if (!form.checkInDate) return "Please select check-in date.";
-    if (!form.checkOutDate) return "Please select check-out date.";
-    if (!form.guests) return "Please enter number of guests.";
+    if (!form.phone.trim()) return "Please provide a valid phone number.";
+    if (!form.checkInDate) return "Check-in date is required.";
     return null;
   };
 
   const formatDate = (dateString) => {
-  if (!dateString) return "—";
-  return new Date(dateString).toLocaleDateString("en-IN", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
-};
-
+    if (!dateString) return "Not specified";
+    return new Date(dateString).toLocaleDateString("en-IN", {
+      day: "numeric",
+      month: "short",
+      year: "numeric",
+    });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -70,197 +64,163 @@ export default function ContactForm() {
       return;
     }
 
-    const whatsappMessage = `
-Hello Hotel Bhakti Palace 👋
+    // Professional WhatsApp Template
+    const whatsappMessage = `*NEW BOOKING ENQUIRY - HOTEL BHAKTI*
+---------------------------------------
+*Guest Details:*
+• Name: ${form.fullName}
+• Phone: ${form.phone}
+• Email: ${form.email || "N/A"}
 
-I would like to enquire about a booking.
+*Stay Information:*
+• Check-in: ${formatDate(form.checkInDate)}
+• Check-out: ${formatDate(form.checkOutDate)}
+• Guests: ${form.guests || "Not specified"}
 
-🧑 Name: ${form.fullName}
-📞 Phone: ${form.phone}
-📧 Email: ${form.email || "Not provided"}
+*Subject:* ${form.subject}
 
-📅 Check-in Date: ${formatDate(form.checkInDate)}
-📅 Check-out Date: ${formatDate(form.checkOutDate)}
-👥 Number of Guests: ${form.guests}
+*Message:*
+${form.message || "No additional message."}
+---------------------------------------
+_Sent via Hotel Bhakti Website_`.trim();
 
-📝 Subject: ${form.subject || "Hotel Booking Enquiry"}
-
-💬 Message:
-${form.message || "—"}
-
-Please contact me with availability and pricing.
-Thank you.
-    `.trim();
-
-    const whatsappURL = `https://wa.me/+918302501774?text=${encodeURIComponent(
-      whatsappMessage
-    )}`;
-
-    window.open(whatsappURL, "_blank");
-
-    setStatus({ loading: false, error: null });
+    const whatsappURL = `https://wa.me/+919772578699?text=${encodeURIComponent(whatsappMessage)}`;
+    
+    // Smooth delay before opening WhatsApp
+    setTimeout(() => {
+      window.open(whatsappURL, "_blank");
+      setStatus({ loading: false, error: null });
+    }, 800);
   };
 
   return (
-    <section
-      className="bg-white py-[120px] px-5"
-      style={{
-        "--accent": "#c49a6c",
-        "--text-primary": "#1a1a1a",
-        "--text-secondary": "#6d6d6d",
-        "--input-border": "rgba(0,0,0,0.15)",
-      }}
-    >
-      <div className="max-w-3xl mx-auto">
+    <section className="bg-[#FAF9F6] py-24 md:py-36 px-6 selection:bg-[#c49a6c] selection:text-white">
+      <div className="max-w-4xl mx-auto">
+        
         {/* Header */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeUp}
-          className="text-center mb-12"
-        >
-          <h2 className="text-4xl md:text-6xl font-serif mb-4">
-            Send Us an Enquiry
-          </h2>
-          <p className="text-lg text-[var(--text-secondary)]">
-            Room availability, bookings or special requests — we’ll assist you personally.
-          </p>
-        </motion.div>
+        <div className="text-center mb-20 flex flex-col items-center">
+          <div className="overflow-hidden mb-4">
+            <motion.p variants={maskReveal} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-[#c49a6c] text-[10px] md:text-xs uppercase tracking-[0.4em] font-medium">
+              Reservation Desk
+            </motion.p>
+          </div>
+          <div className="overflow-hidden mb-6">
+            <motion.h2 variants={maskReveal} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-4xl md:text-5xl lg:text-6xl font-serif font-light text-[#1a1a1a]">
+              Send an <span className="italic text-[#c49a6c]">Enquiry</span>
+            </motion.h2>
+          </div>
+          <motion.div initial={{ width: 0 }} whileInView={{ width: "40px" }} transition={{ duration: 1 }} className="h-px bg-[#c49a6c]/40" />
+        </div>
 
         {status.error && (
-          <div className="mb-6 text-sm text-red-700">{status.error}</div>
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mb-10 p-4 border border-red-200 bg-red-50 text-red-700 text-sm text-center">
+            {status.error}
+          </motion.div>
         )}
 
         {/* Form */}
-        <motion.form
-          onSubmit={handleSubmit}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={stagger}
-          className="flex flex-col gap-12"
-        >
-          {/* Name */}
-          <motion.div variants={fadeUp}>
-            <label className="uppercase text-xs tracking-[0.25em] text-[var(--accent)]">
-              Full Name
-            </label>
+        <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12">
+          
+          {/* Full Name */}
+          <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="md:col-span-2">
+            <label className="block text-[10px] uppercase tracking-[0.2em] text-[#888] mb-2">Full Name *</label>
             <input
               name="fullName"
+              placeholder="Your divine name"
               value={form.fullName}
               onChange={handleChange}
-              className="w-full bg-transparent border-b py-3 text-lg outline-none"
+              className="w-full bg-transparent border-b border-[#d5c5b5] py-3 text-[#1a1a1a] focus:border-[#c49a6c] outline-none transition-colors duration-500 placeholder:text-[#ccc] font-light"
             />
           </motion.div>
 
-          {/* Phone + Email */}
-          <div className="grid md:grid-cols-2 gap-8">
-            <motion.div variants={fadeUp}>
-              <label className="uppercase text-xs tracking-[0.25em] text-[var(--accent)]">
-                Phone Number
-              </label>
-              <input
-                name="phone"
-                value={form.phone}
-                onChange={handleChange}
-                className="w-full bg-transparent border-b py-3 text-lg outline-none"
-              />
-            </motion.div>
-
-            <motion.div variants={fadeUp}>
-              <label className="uppercase text-xs tracking-[0.25em] text-[var(--accent)]">
-                Email (optional)
-              </label>
-              <input
-                name="email"
-                value={form.email}
-                onChange={handleChange}
-                className="w-full bg-transparent border-b py-3 text-lg outline-none"
-              />
-            </motion.div>
-          </div>
-
-          {/* Date + Guests */}
-          <div className="grid md:grid-cols-2 gap-8">
-            <motion.div variants={fadeUp}>
-              <label className="uppercase text-xs tracking-[0.25em] text-[var(--accent)]">
-                Check-in Date
-              </label>
-              <input
-                type="date"
-                name="checkInDate"
-                value={form.checkInDate}
-                onChange={handleChange}
-                className="w-full bg-transparent border-b py-3 text-lg outline-none"
-              />
-            </motion.div>
-          
-            <motion.div variants={fadeUp}>
-              <label className="uppercase text-xs tracking-[0.25em] text-[var(--accent)]">
-                Check-out Date
-              </label>
-              <input
-                type="date"
-                name="checkOutDate"
-                value={form.checkOutDate}
-                onChange={handleChange}
-                className="w-full bg-transparent border-b py-3 text-lg outline-none"
-              />
-            </motion.div>
-
-            <motion.div variants={fadeUp}>
-              <label className="uppercase text-xs tracking-[0.25em] text-[var(--accent)]">
-                Number of Guests
-              </label>
-              <input
-                type="number"
-                min="1"
-                name="guests"
-                value={form.guests}
-                onChange={handleChange}
-                className="w-full bg-transparent border-b py-3 text-lg outline-none"
-              />
-            </motion.div>
-          </div>
-
-          {/* Subject */}
-          <motion.div variants={fadeUp}>
-            <label className="uppercase text-xs tracking-[0.25em] text-[var(--accent)]">
-              Subject
-            </label>
+          {/* Phone */}
+          <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+            <label className="block text-[10px] uppercase tracking-[0.2em] text-[#888] mb-2">Phone Number *</label>
             <input
-              name="subject"
-              value={form.subject}
+              name="phone"
+              placeholder="+91"
+              value={form.phone}
               onChange={handleChange}
-              className="w-full bg-transparent border-b py-3 text-lg outline-none"
+              className="w-full bg-transparent border-b border-[#d5c5b5] py-3 text-[#1a1a1a] focus:border-[#c49a6c] outline-none transition-colors duration-500 font-light"
+            />
+          </motion.div>
+
+          {/* Email */}
+          <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+            <label className="block text-[10px] uppercase tracking-[0.2em] text-[#888] mb-2">Email Address</label>
+            <input
+              name="email"
+              placeholder="For confirmation"
+              value={form.email}
+              onChange={handleChange}
+              className="w-full bg-transparent border-b border-[#d5c5b5] py-3 text-[#1a1a1a] focus:border-[#c49a6c] outline-none transition-colors duration-500 font-light"
+            />
+          </motion.div>
+
+          {/* Check-in */}
+          <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+            <label className="block text-[10px] uppercase tracking-[0.2em] text-[#888] mb-2">Check-in Date *</label>
+            <input
+              type="date"
+              name="checkInDate"
+              value={form.checkInDate}
+              onChange={handleChange}
+              className="w-full bg-transparent border-b border-[#d5c5b5] py-3 text-[#1a1a1a] focus:border-[#c49a6c] outline-none transition-colors duration-500 font-light appearance-none"
+            />
+          </motion.div>
+
+          {/* Check-out */}
+          <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+            <label className="block text-[10px] uppercase tracking-[0.2em] text-[#888] mb-2">Check-out Date</label>
+            <input
+              type="date"
+              name="checkOutDate"
+              value={form.checkOutDate}
+              onChange={handleChange}
+              className="w-full bg-transparent border-b border-[#d5c5b5] py-3 text-[#1a1a1a] focus:border-[#c49a6c] outline-none transition-colors duration-500 font-light appearance-none"
+            />
+          </motion.div>
+
+          {/* Guests */}
+          <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="md:col-span-2">
+            <label className="block text-[10px] uppercase tracking-[0.2em] text-[#888] mb-2">Number of Guests</label>
+            <input
+              type="number"
+              name="guests"
+              placeholder="0"
+              value={form.guests}
+              onChange={handleChange}
+              className="w-full bg-transparent border-b border-[#d5c5b5] py-3 text-[#1a1a1a] focus:border-[#c49a6c] outline-none transition-colors duration-500 font-light"
             />
           </motion.div>
 
           {/* Message */}
-          <motion.div variants={fadeUp}>
-            <label className="uppercase text-xs tracking-[0.25em] text-[var(--accent)]">
-              Message
-            </label>
+          <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="md:col-span-2">
+            <label className="block text-[10px] uppercase tracking-[0.2em] text-[#888] mb-2">Special Requests / Message</label>
             <textarea
               name="message"
+              rows="4"
               value={form.message}
               onChange={handleChange}
-              className="w-full bg-transparent border-b py-3 text-lg outline-none min-h-[120px]"
+              className="w-full bg-transparent border-b border-[#d5c5b5] py-3 text-[#1a1a1a] focus:border-[#c49a6c] outline-none transition-colors duration-500 font-light resize-none"
             />
           </motion.div>
 
           {/* Submit */}
-          <motion.div variants={fadeUp}>
+          <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="md:col-span-2 mt-8 text-center">
             <button
               type="submit"
               disabled={status.loading}
-              className="mt-6 px-10 py-4 border border-[var(--accent)] rounded-full text-[var(--accent)] hover:bg-[var(--accent)] hover:text-white transition-all"
+              className="inline-flex items-center justify-center px-12 py-5 bg-[#1a1a1a] text-white text-[10px] md:text-xs uppercase tracking-[0.25em] font-light transition-all duration-500 hover:bg-[#c49a6c] disabled:bg-gray-400"
             >
-              {status.loading ? "Opening WhatsApp…" : "Submit Enquiry"}
+              {status.loading ? "Processing..." : "Enquire via WhatsApp"}
             </button>
+            <p className="mt-4 text-[10px] text-[#888] uppercase tracking-widest font-light italic">
+              * Response typically within 2 hours
+            </p>
           </motion.div>
-        </motion.form>
+
+        </form>
       </div>
     </section>
   );

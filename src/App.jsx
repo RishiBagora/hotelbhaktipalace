@@ -20,16 +20,15 @@ const App = () => {
  const location = useLocation();
 
   useEffect(() => {
-    // 🔴 kill old instance (VERY IMPORTANT)
     if (window.lenis) {
       window.lenis.destroy();
       window.lenis = null;
     }
 
     const lenis = new Lenis({
-      lerp: 0.05,          // 👈 KEY: stable & smooth
+      lerp: 0.05,
       smoothWheel: true,
-      smoothTouch: false, // mobile pe native better
+      smoothTouch: false,
       infinite: false,
     });
 
@@ -49,42 +48,33 @@ const App = () => {
     };
   }, []);
 
-  // 🔝 route change → instant top (NO animation)
   useEffect(() => {
     window.lenis?.scrollTo(0, { immediate: true });
   }, [location.pathname]);
 
   return (
     <>
-  <ScrollToTop />
-
-
-  <div id="lenis-root"
-> 
-
-<Navbar />
-
-  {/* ❌ w-screen hata */}
-  <div className="w-full overflow-x-hidden">
-    <main className="pt-16 md:pt-24">
-      <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<Home />} />
-        <Route path="/rooms" element={<Rooms />} />
-        <Route path="/rooms/:slug" element={<RoomsDetailPage />} />
-        <Route path="/aboutus" element={<Aboutus />} />
-        <Route path="/pangat" element={<Pangat />} />
-        <Route path="/attractions" element={<Attractions />} />
-        <Route path="/attractions/:slug" element={<AttractionDetailPage />} />
-        <Route path="/blogs" element={<Blogs />} />
-        <Route path="/contact" element={<Contacts />} />
-      </Routes>
-    </main>
-  </div>
-
-  <FooterSection />
-  </div> 
-</>
-
+      <ScrollToTop />
+      <div id="lenis-root"> 
+        <Navbar />
+        <div className="w-full overflow-x-hidden">
+          <main className="pt-[110px] md:pt-[130px]">
+            <Routes location={location} key={location.pathname}>
+              <Route path="/" element={<Home />} />
+              <Route path="/rooms" element={<Rooms />} />
+              <Route path="/rooms/:slug" element={<RoomsDetailPage />} />
+              <Route path="/aboutus" element={<Aboutus />} />
+              <Route path="/pangat" element={<Pangat />} />
+              <Route path="/attractions" element={<Attractions />} />
+              <Route path="/attractions/:slug" element={<AttractionDetailPage />} />
+              <Route path="/blogs" element={<Blogs />} />
+              <Route path="/contact" element={<Contacts />} />
+            </Routes>
+          </main>
+        </div>
+        <FooterSection />
+      </div> 
+    </>
   )
 }
 

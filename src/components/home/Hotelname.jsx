@@ -21,7 +21,7 @@ const HotelName = () => {
             font-sans tracking-widest
         "
         >
-          Stay Close To ShreeNath Ji
+          Stay Close To ShriNath Ji
         </p>
         
         {/* Subtle decorative divider (Optional but adds "Perfection") */}

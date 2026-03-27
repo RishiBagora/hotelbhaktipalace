@@ -1,7 +1,5 @@
 import React from 'react'
-// import Navbar from '../components/home/Navbar'
 import HotelName from '../components/home/Hotelname'
-import ContactRibbon from '../components/home/ContactRibbon'
 import Background from '../components/home/Background'
 import Aboutsection from '../components/home/Aboutsection'
 import RoomsAndSuites from '../components/home/RoomsAndSuites'
@@ -10,25 +8,19 @@ import LocationSection from '../components/home/LocationSection'
 import DiningSection from '../components/home/DiningSection'
 import ExperienceStats from '../components/aboutus/ExperienceStats'
 import TestimonialSection from '../components/home/TestimonialSection'
-// import FooterSection from '../components/general/FooterSection'
-// import AboutUs from '../components/home/AboutUs'
 
 const Home = () => {
   return (
-    <div className='w-screen  bg-[#faf9f6]'>
-        {/* <Navbar/> */}
-        <ContactRibbon/>
-          <HotelName/>
+    <div className='w-screen bg-[#faf9f6]'>
+        <HotelName/>
         <Background/>
         <Aboutsection/> 
         <LocationSection/>
-        {/* <AboutUs/> */}
         <RoomsAndSuites/>
         <AmenitiesSection/>
         <DiningSection/>
         <ExperienceStats/>
-       <TestimonialSection/>
-       
+        <TestimonialSection/>
     </div>
   )
 }

@@ -2,8 +2,8 @@ import React from "react";
 
 const Background = () => {
   return (
-    <section className="relative top-[-20px] w-full h-screen overflow-hidden bg-black flex items-center justify-center">
-      
+    <section className="relative  w-full h-screen overflow-hidden bg-black flex items-center justify-center">
+
       {/* 1. Cinematic Background Image */}
       <div className="absolute inset-0 overflow-hidden">
         <img
@@ -16,15 +16,15 @@ const Background = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/30"></div>
       </div>
 
-      
 
-      {/* 3. Bottom Glass Floating Element (Optional - for Temple Distance) */}
+
+      {/* 3. Bottom Glass Floating Element (Optional - for Temple Distance)
       <div className="absolute bottom-12 right-0 md:right-12 z-20 animate-fadeInRight">
-          <div className="backdrop-blur-md bg-white/5 border-l border-white/20 px-8 py-4">
-              <p className="text-white/50 text-[10px] uppercase tracking-widest mb-1">Location</p>
-              <p className="text-white font-light italic">50 Steps from Shreenath Ji Temple</p>
-          </div>
-      </div>
+        <div className="backdrop-blur-md bg-white/5 border-l border-white/20 px-8 py-4">
+          <p className="text-white/50 text-[10px] uppercase tracking-widest mb-1">Location</p>
+          <p className="text-white font-light italic">50 Steps from Shreenath Ji Temple</p>
+        </div>
+      </div> */}
 
       {/* 4. Smooth Animations */}
       <style jsx>{`

@@ -3,56 +3,47 @@ import { Phone, Wifi, Car, Bed } from "lucide-react";
 
 const ContactRibbon = () => {
   return (
-    <div className="w-full bg-black/30 overflow-hidden fixed z-40 top-20  text-white">
+    <div className="w-full bg-[#1a1a1a] text-white overflow-hidden py-2 border-b border-black/10">
 
-      <div className="flex w-max animate-marquee font-medium">
+      <div className="flex w-max animate-marquee font-medium text-[11px] md:text-[13px] tracking-wide">
 
         <div className="flex items-center whitespace-nowrap">
-
           <span className="mx-8 flex items-center gap-2">
-            <Phone size={16} />
-            Contact Us:
-            <a href="tel:+919772578699" className="underline">
-              +91 9772578699
+            <Phone size={14} className="text-[#c49a6c]" />
+            <span className="opacity-80">Bookings & Inquiries:</span>
+            <a href="tel:+919772578699" className="hover:text-[#c49a6c] transition-colors underline decoration-white/20 underline-offset-4">
+              +91 97725 78699
             </a>
           </span>
-
-          <span className="mx-8">
-            Hotel Bhakti – 50 Steps from ShreeNath Ji | Your Spiritual Stay Awaits!
+          <span className="mx-8 text-white/90">
+            Hotel Bhakti – <span className="text-[#c49a6c] italic">50 Steps from ShreeNath Ji</span> | Your Spiritual Stay Awaits!
           </span>
-
-
         </div>
 
         <div className="flex items-center whitespace-nowrap">
-
           <span className="mx-8 flex items-center gap-2">
-            <Phone size={16} />
-            Contact Us:
-            <a href="tel:+919772578699" className="underline">
-              +91 9772578699
+            <Phone size={14} className="text-[#c49a6c]" />
+            <span className="opacity-80">Bookings & Inquiries:</span>
+            <a href="tel:+919772578699" className="hover:text-[#c49a6c] transition-colors underline decoration-white/20 underline-offset-4">
+              +91 97725 78699
             </a>
           </span>
-
-          <span className="mx-8">
-            Hotel Bhakti – 50 Steps from ShreeNath Ji Temple| Your Spiritual Stay Awaits!
+          <span className="mx-8 text-white/90">
+            Hotel Bhakti – <span className="text-[#c49a6c] italic">50 Steps from ShreeNath Ji Temple</span> | Your Spiritual Stay Awaits!
           </span>
-
         </div>
+        
         <div className="flex items-center whitespace-nowrap">
-
           <span className="mx-8 flex items-center gap-2">
-            <Phone size={16} />
-            Contact Us:
-            <a href="tel:+919772578699" className="underline">
-              +91 9772578699
+            <Phone size={14} className="text-[#c49a6c]" />
+            <span className="opacity-80">Bookings & Inquiries:</span>
+            <a href="tel:+919772578699" className="hover:text-[#c49a6c] transition-colors underline decoration-white/20 underline-offset-4">
+              +91 97725 78699
             </a>
           </span>
-
-          <span className="mx-8">
-            Hotel Bhakti – 50 Steps from ShreeNath Ji Temple| Your Spiritual Stay Awaits!
+          <span className="mx-8 text-white/90">
+            Hotel Bhakti – <span className="text-[#c49a6c] italic">50 Steps from ShreeNath Ji Temple</span> | Your Spiritual Stay Awaits!
           </span>
-
         </div>
 
       </div>
@@ -65,7 +56,7 @@ const ContactRibbon = () => {
           }
 
           .animate-marquee {
-            animation: marquee 25s linear infinite;
+            animation: marquee 30s linear infinite;
           }
         `}
       </style>

@@ -54,16 +54,16 @@ const ContactDetailsStrip = ({ items }) => {
         {
             icon: <VscMail className="w-7 h-7" />,
             label: "Reservation Email",
-            value: "reservations@hotelbhaktipalace.com",
+            value: "hotelbhakti11@gmail.com",
             subtext: "For bookings, special requests & confirmations",
-            link: "mailto:reservations@hotelbhaktipalace.com",
+            link: "mailto:hotelbhakti11@gmail.com",
         },
         {
             icon: <CiLocationOn className="w-7 h-7" />,
             label: "Hotel Address",
             value: "Near Shree Nath Ji Temple, Nathdwara, Rajasthan",
             subtext: "Located in the spiritual heart of the city",
-            link: "https://maps.app.goo.gl/EeNaB5H4dFQ3nJbB6",
+            link: "https://maps.app.goo.gl/VDRJmRZEUz2wTKEE8",
         },
     ];
 
