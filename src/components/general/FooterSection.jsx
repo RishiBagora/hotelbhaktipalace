@@ -542,6 +542,9 @@ export default function CleanLuxuryFooter() {
           <div className="text-[#777777] text-xs">
             © {new Date().getFullYear()} Hotel Bhakti. All rights reserved.
           </div>
+          <div className="text-[#C49A6C] text-md">
+            Designed and Developed by <a href="https://arcocreativestudio.vercel.app" target="_blank" className="hover:text-[#F9F9F9] transition-colors duration-300 underline">Arco Creative Studio</a>.
+          </div>
 
           <div className="flex gap-6 text-[#777777] text-xs">
             <a href="/privacy" className="hover:text-[#F9F9F9] transition-colors duration-300">Privacy Policy</a>
