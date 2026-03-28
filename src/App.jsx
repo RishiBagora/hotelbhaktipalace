@@ -20,25 +20,24 @@ const App = () => {
  const location = useLocation();
 
   useEffect(() => {
-    if (window.lenis) {
-      window.lenis.destroy();
-      window.lenis = null;
-    }
-
     const lenis = new Lenis({
-      lerp: 0.05,
-      smoothWheel: true,
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Easing for natural butter
+      direction: 'vertical',
+      gestureDirection: 'vertical',
+      smooth: true,
+      mouseMultiplier: 1.2,
       smoothTouch: false,
-      infinite: false,
+      touchMultiplier: 2,
     });
 
     window.lenis = lenis;
 
     let rafId;
-    const raf = (time) => {
+    function raf(time) {
       lenis.raf(time);
       rafId = requestAnimationFrame(raf);
-    };
+    }
     rafId = requestAnimationFrame(raf);
 
     return () => {

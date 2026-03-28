@@ -1,116 +1,38 @@
-  @import "tailwindcss";
-
-:root {
-  --grn: #434B34;
-  --txt: #3a3a3a;
-    min-height: 100vh;
-  /* --heading-font: "Poppins", sans-serif; */
-}
-html {
-  scrollbar-gutter: stable; /* ✅ keeps layout width consistent even if scrollbar appears/disappears */
-}
-nav {
-  will-change: transform;
-}
-html, body {
- width: 100%;
- height: auto !important;
-  overflow-y: auto !important;
-  overflow-x: hidden;
-}
-html{
-  /* scroll-behavior: smooth; */
-}
-html.lenis {
-  height: auto;
-}
-body{
-  overscroll-behavior: none;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
-.lenis.lenis-smooth {
-  scroll-behavior: auto !important;
-}
-
-.lenis.lenis-stopped {
-  overflow: hidden;
-}
-
-
-@keyframes spin-slow {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.animate-spin-slow {
-  animation: spin-slow 20s linear infinite;
-  transform-origin: center;
-}
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fadeInUp {
-  animation: fadeInUp 1s ease-out forwards;
-}
-
-/* Hide scrollbar for all elements */
-* {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
-}
-
-*::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
-}
 @import "tailwindcss";
 
-/* ---------------- ROOT ---------------- */
 :root {
   --grn: #434B34;
   --txt: #3a3a3a;
   min-height: 100vh;
 }
 
-/* ---------------- HTML / BODY SCROLL FIX ---------------- */
-html, body {
-  width: 100%;
-  height: auto !important;
-  overflow-y: auto !important;
-  overflow-x: hidden;
-}
-
-/* ---------------- REMOVE LENIS SCROLL LOCK ---------------- */
-.lenis-stopped {
-  overflow: auto !important;
-}
-
-/* ---------------- OPTIONAL LENIS SUPPORT ---------------- */
-html.lenis {
-  height: auto;
-}
-
-.lenis.lenis-smooth {
-  scroll-behavior: auto !important;
-}
-
 /* ---------------- BODY FIX ---------------- */
 body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  overscroll-behavior-y: auto; /* was none ❌ */
+  overscroll-behavior-y: none;
+}
+
+/* ---------------- LENIS BEST PRACTICES ----------------
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+} */
+
+/* ---------------- NAV PERFORMANCE ---------------- */
+nav {
+  will-change: transform;
 }
 
 /* ---------------- NAV PERFORMANCE ---------------- */
@@ -179,4 +101,9 @@ body::-webkit-scrollbar {
 /* Optional hover scale effect */
 .jharokha-hover:hover img {
   transform: scale(1.05);
+}
+
+.element {
+  transform: translateZ(0);
+  will-change: transform;
 }

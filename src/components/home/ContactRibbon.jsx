@@ -16,7 +16,7 @@ const ContactRibbon = () => {
             </a>
           </span>
           <span className="mx-8 text-white/90">
-            Hotel Bhakti – <span className="text-[#c49a6c] italic">50 Steps from ShreeNath Ji</span> | Your Spiritual Stay Awaits!
+            Hotel Bhakti – <span className="text-[#c49a6c] italic">50 Steps from ShriNath Ji Temple</span> | Your Spiritual Stay Awaits!
           </span>
         </div>
 
@@ -29,7 +29,7 @@ const ContactRibbon = () => {
             </a>
           </span>
           <span className="mx-8 text-white/90">
-            Hotel Bhakti – <span className="text-[#c49a6c] italic">50 Steps from ShreeNath Ji Temple</span> | Your Spiritual Stay Awaits!
+            Hotel Bhakti – <span className="text-[#c49a6c] italic">50 Steps from ShriNath Ji Temple</span> | Your Spiritual Stay Awaits!
           </span>
         </div>
         
@@ -42,7 +42,7 @@ const ContactRibbon = () => {
             </a>
           </span>
           <span className="mx-8 text-white/90">
-            Hotel Bhakti – <span className="text-[#c49a6c] italic">50 Steps from ShreeNath Ji Temple</span> | Your Spiritual Stay Awaits!
+            Hotel Bhakti – <span className="text-[#c49a6c] italic">50 Steps from ShriNath Ji Temple</span> | Your Spiritual Stay Awaits!
           </span>
         </div>
 

@@ -154,7 +154,7 @@ const LocationSection = () => {
             <div className="mt-8 sm:mt-10 pt-6 border-t border-black/5">
               <p className="text-[10px] sm:text-[11px] text-gray-500 uppercase tracking-[0.15em] leading-relaxed">
                 Hotel Bhakti <br />
-                <span className="text-gray-400">Near Shree Nath Ji Temple, Nathdwara, Raj.</span>
+                <span className="text-gray-400">Near ShriNath Ji Temple, Nathdwara, Raj.</span>
               </p>
             </div>
             

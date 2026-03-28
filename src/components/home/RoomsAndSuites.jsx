@@ -23,12 +23,13 @@ const ItemVariants = {
 
 const RoomCard = ({ room }) => {
   return (
-    <motion.div
-      variants={ItemVariants}
-      className="group relative bg-white flex flex-col items-start border border-[#e7e1d7] hover:border-[#c49a6c] transition-all duration-700 ease-[cubic-bezier(0.19,1,0.22,1)]"
-    >
-      {/* IMAGE */}
-      <div className="w-full relative overflow-hidden aspect-[16/10]">
+    <motion.div variants={ItemVariants} className="h-full flex">
+      <Link
+        to={`/rooms/${room.slug}`}
+        className="group relative w-full h-full bg-white flex flex-col items-start border border-[#e7e1d7] hover:border-[#c49a6c] transition-all duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] block cursor-pointer overflow-hidden"
+      >
+        {/* IMAGE */}
+        <div className="w-full relative overflow-hidden aspect-[16/10]">
         <img
           src={room.image || room.gallery?.[0]}
           alt={room.name}
@@ -88,10 +89,7 @@ const RoomCard = ({ room }) => {
         <div className="flex-grow"></div>
 
         {/* CTA */}
-        <Link
-          to={`/rooms/${room.slug}`}
-          className="mt-auto flex items-center justify-between w-full pt-4 border-t border-[#f0ebe3] group/link cursor-pointer"
-        >
+        <div className="mt-auto flex items-center justify-between w-full pt-4 border-t border-[#f0ebe3] group/link">
           <span className="text-[10px] md:text-[11px] uppercase tracking-[0.25em] font-medium text-[#1a1a1a] group-hover/link:text-[#c49a6c] transition-colors duration-500">
             Discover Features
           </span>
@@ -103,8 +101,9 @@ const RoomCard = ({ room }) => {
               className="text-[#1a1a1a] group-hover/link:text-white transition-colors duration-500"
             />
           </div>
-        </Link>
+        </div>
       </div>
+      </Link>
     </motion.div>
   );
 };
@@ -153,7 +152,7 @@ const RoomsAndSuites = () => {
           </div>
 
           <h2 className="text-4xl md:text-5xl font-light text-[#1a1a1a] leading-tight font-serif mb-5">
-            Sanctuaries of <span className="italic text-[#888]">Serenity</span>
+            Sanctuaries of <span className="italic text-[#c49a6c]">Serenity</span>
           </h2>
 
           <p className="max-w-xl text-[#666] font-light leading-relaxed text-[13px] md:text-sm tracking-wide">

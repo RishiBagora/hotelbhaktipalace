@@ -85,7 +85,7 @@ const ExperienceStats = () => {
           animate={controls}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          Over the years, Hotel Bhakyi Palace has served thousands of guests with
+          Over the years, Hotel Bhakti has served thousands of guests with
           devotion, elegance, and unmatched hospitality. Our journey continues to
           set new benchmarks in Nathdwara’s hospitality landscape.
         </motion.p>

@@ -58,10 +58,10 @@
 //         }}
 //       >
 //         <div className="max-w-6xl mx-auto px-5 py-20 md:py-24">
-          
+
 //           {/* Footer Content Grid */}
 //           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
-            
+
 //             {/* Column 1: About */}
 //             <div>
 //               <h3 
@@ -195,7 +195,7 @@
 //       <style>
 //         {`
 //           @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@600;700&display=swap');
-          
+
 //           :root {
 //             /* Dark color palette for footer */
 //             --bg-dark: #1a1a1a;
@@ -205,7 +205,7 @@
 //           }
 //         `}
 //       </style>
-      
+
 //       {/* Main render area for the component.
 //         The outer div provides a light background to contrast the dark footer.
 //         Removed min-h-screen and flex classes to remove the large gap.
@@ -269,7 +269,7 @@
 // export default function LuxuryFooter() {
 //   return (
 //     <footer className="relative bg-[#050505] pt-24 md:pt-32 pb-8 overflow-hidden selection:bg-[#BFA281] selection:text-[#050505]">
-      
+
 //       {/* 1. Cinematic Film Grain Texture */}
 //       <div 
 //         className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-screen"
@@ -282,7 +282,7 @@
 //       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-[#BFA281]/[0.02] rounded-full blur-[120px] pointer-events-none" />
 
 //       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
-        
+
 //         <motion.div 
 //           initial="hidden"
 //           whileInView="visible"
@@ -327,7 +327,7 @@
 //             <div className="flex flex-col gap-4">
 //               <FooterLink href="tel:+919772578699">+91 97725 78699</FooterLink>
 //               <FooterLink href="mailto:reservations@hotelbhaktipalace.com">reservations@hotelbhaktipalace.com</FooterLink>
-              
+
 //               <div className="mt-4 pt-4 border-t border-[#BFA281]/10">
 //                 <p className="text-[#7A7A7A] text-sm font-light leading-relaxed">
 //                   Near Shree Nath Ji Temple,<br />
@@ -413,10 +413,10 @@ import { motion } from "framer-motion";
 --------------------------- */
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { duration: 1, ease: [0.16, 1, 0.3, 1] } 
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 1, ease: [0.16, 1, 0.3, 1] }
   },
 };
 
@@ -434,9 +434,9 @@ const containerVariants = {
 export default function CleanLuxuryFooter() {
   return (
     <footer className="relative bg-[#0A0A0A] pt-24 pb-10 overflow-hidden selection:bg-[#C49A6C] selection:text-white">
-      
+
       {/* 1. Subtle Paper Grain (Premium Texture, very faint) */}
-      <div 
+      <div
         className="absolute inset-0 opacity-[0.04] pointer-events-none mix-blend-screen"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`
@@ -444,11 +444,11 @@ export default function CleanLuxuryFooter() {
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
-        
+
         {/* Top Gold Divider */}
         <div className="w-full h-[1px] bg-[#C49A6C]/30 mb-20" />
 
-        <motion.div 
+        <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
@@ -458,7 +458,7 @@ export default function CleanLuxuryFooter() {
           {/* ----- Column 1: Brand & Address (Lots of breathing room) ----- */}
           <motion.div variants={fadeUp} className="md:col-span-6 flex flex-col justify-between pr-0 md:pr-12">
             <div>
-              <h2 className="font-serif text-3xl md:text-5xl text-[#C49A6C] mb-6 tracking-wide">
+              <h2 className="font-serif font-light  text-3xl md:text-5xl text-[#C49A6C] mb-6 tracking-wide">
                 Hotel Bhakti
               </h2>
               <p className="text-[#A3A3A3] text-sm md:text-base leading-relaxed max-w-sm">
@@ -469,9 +469,9 @@ export default function CleanLuxuryFooter() {
             <div className="mt-12">
               <p className="text-[#F9F9F9] text-sm mb-1">Near Shree Nath Ji Temple</p>
               <p className="text-[#A3A3A3] text-sm">Nathdwara, Rajasthan 313301, India</p>
-              
-              <a 
-                href="#" 
+
+              <a
+                href="#"
                 className="inline-block mt-4 text-[#C49A6C] text-xs uppercase tracking-[0.15em] hover:text-[#F9F9F9] transition-colors duration-300"
               >
                 Get Directions →
@@ -487,8 +487,8 @@ export default function CleanLuxuryFooter() {
             <ul className="flex flex-col gap-4">
               {['Rooms', 'Pangat', 'Attractions', 'Gallery', 'Contact'].map((item) => (
                 <li key={item}>
-                  <a 
-                    href={`/${item.toLowerCase().replace(/\s+/g, '-')}`} 
+                  <a
+                    href={`/${item.toLowerCase().replace(/\s+/g, '-')}`}
                     className="text-[#A3A3A3] text-sm hover:text-[#C49A6C] transition-colors duration-300"
                   >
                     {item}
@@ -532,7 +532,7 @@ export default function CleanLuxuryFooter() {
         </motion.div>
 
         {/* ----- Bottom Copyright Area ----- */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
