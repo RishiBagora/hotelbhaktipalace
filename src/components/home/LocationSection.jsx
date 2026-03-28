@@ -17,10 +17,10 @@ const LocationSection = () => {
   };
 
   const landmarks = [
-    { name: "Shree Nath Ji Temple", dist: "50 Steps", icon: Landmark },
-    { name: "Nathdwara Market", dist: "2 Min Walk", icon: Navigation },
-    { name: "Chaupati / Food Stalls", dist: "5 Min Walk", icon: MapPin },
-    { name: "Shrinathji Gaushala", dist: "10 Min Drive", icon: Clock },
+    { name: "ShriNath Ji Temple", dist: "50 Steps", icon: Landmark },
+    { name: "Nathdwara Market", dist: "1 Min Walk", icon: Navigation },
+    { name: "Chaupati / Food Stalls", dist: "3 Min Walk", icon: MapPin },
+    { name: "ShriNathji Gaushala", dist: "10 Min Drive", icon: Clock },
   ];
 
   return (

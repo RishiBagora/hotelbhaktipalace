@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Routes, useLocation } from 'react-router-dom'
 import Lenis from "@studio-freight/lenis";
-
+import Gallery from './Pages/Gallery'
 import Home from './Pages/Home'
 import Rooms from './Pages/Rooms'
 import RoomsDetailPage from './Pages/RoomsDetailPage'
@@ -68,6 +68,7 @@ const App = () => {
               <Route path="/attractions" element={<Attractions />} />
               <Route path="/attractions/:slug" element={<AttractionDetailPage />} />
               <Route path="/blogs" element={<Blogs />} />
+              <Route path="/gallery" element={<Gallery />} />
               <Route path="/contact" element={<Contacts />} />
             </Routes>
           </main>

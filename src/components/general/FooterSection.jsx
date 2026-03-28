@@ -485,7 +485,7 @@ export default function CleanLuxuryFooter() {
               Discover
             </h4>
             <ul className="flex flex-col gap-4">
-              {['Accommodations', 'Dining at Pangat', 'Experiences', 'Gallery', 'Contact'].map((item) => (
+              {['Rooms', 'Pangat', 'Attractions', 'Gallery', 'Contact'].map((item) => (
                 <li key={item}>
                   <a 
                     href={`/${item.toLowerCase().replace(/\s+/g, '-')}`} 
@@ -520,7 +520,7 @@ export default function CleanLuxuryFooter() {
               Social
             </h4>
             <div className="flex gap-6">
-              <a href="#" className="text-[#A3A3A3] text-sm hover:text-[#F9F9F9] transition-colors duration-300">
+              <a href="https://www.instagram.com/hotelbhakti" target="_blank" className="text-[#A3A3A3] text-sm hover:text-[#F9F9F9] transition-colors duration-300">
                 Instagram
               </a>
               <a href="#" className="text-[#A3A3A3] text-sm hover:text-[#F9F9F9] transition-colors duration-300">

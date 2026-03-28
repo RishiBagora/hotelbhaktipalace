@@ -25,7 +25,7 @@ export default function Navbar() {
     };
   }, [isMenuOpen]);
 
-  const allLinks = ["Home", "About Us", "Rooms", "Attractions", "Contact"];
+  const allLinks = ["Home", "About Us", "Rooms","Gallery", "Attractions", "Contact"];
 
   return (
     <>

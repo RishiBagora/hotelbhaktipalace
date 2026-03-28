@@ -17,7 +17,7 @@ const HotelName = () => {
         <p className="
           text-xl md:text-3xl lg:text-3xl 
           
-          text-[#c49a6c] 
+          text-white 
             font-sans tracking-widest
         "
         >

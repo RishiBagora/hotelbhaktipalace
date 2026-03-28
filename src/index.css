@@ -162,6 +162,21 @@ body::-webkit-scrollbar {
   animation: spin 18s linear infinite;
 }
 ::selection {
-  background: var(--txt);
+  background: #c49a6c;
   color: white;
+}
+
+
+/* Custom Clip-Path Shapes */
+.clip-mehraab {
+  clip-path: ellipse(100% 100% at 50% 100%);
+}
+
+.clip-jharokha-full {
+  clip-path: ellipse(100% 100% at 50% 100%) ;
+}
+
+/* Optional hover scale effect */
+.jharokha-hover:hover img {
+  transform: scale(1.05);
 }
