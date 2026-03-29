@@ -457,15 +457,13 @@ export default function CleanLuxuryFooter() {
         >
           {/* ----- Column 1: Brand & Address (Lots of breathing room) ----- */}
           <motion.div variants={fadeUp} className="md:col-span-6 flex flex-col justify-between pr-0 md:pr-12">
-            <div>
-              <h2 className="font-serif font-light  text-3xl md:text-5xl text-[#C49A6C] mb-6 tracking-wide">
-                Hotel Bhakti
-              </h2>
-              <p className="text-[#A3A3A3] text-sm md:text-base leading-relaxed max-w-sm">
+            <div className="font-serif font-lighttext-[#C49A6C] mb-6 tracking-wide">
+              
+              <img width={200} src="/images/hotellogo.png" />
+            </div>
+<p className="text-[#A3A3A3] text-sm md:text-base leading-relaxed max-w-sm">
                 A sanctuary of quiet elegance and devotion in the heart of Nathdwara.
               </p>
-            </div>
-
             <div className="mt-12">
               <p className="text-[#F9F9F9] text-sm mb-1">Near Shree Nath Ji Temple</p>
               <p className="text-[#A3A3A3] text-sm">Nathdwara, Rajasthan 313301, India</p>
@@ -485,7 +483,7 @@ export default function CleanLuxuryFooter() {
               Discover
             </h4>
             <ul className="flex flex-col gap-4">
-              {['Rooms', 'Pangat', 'Attractions', 'Gallery', 'Contact'].map((item) => (
+              {['Rooms', 'Attractions', 'Contact'].map((item) => (
                 <li key={item}>
                   <a
                     href={`/${item.toLowerCase().replace(/\s+/g, '-')}`}

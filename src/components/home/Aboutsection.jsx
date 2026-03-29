@@ -681,9 +681,7 @@ import { motion } from "framer-motion";
 const AboutSection = () => {
   // Stats Data
   const stats = [
-    { num: "50", label: "Steps From Temple" },
-    { num: "15+", label: "Years of Devotion" },
-    { num: "98%", label: "Guest Satisfaction" },
+    { num: "50", label: "Steps From Temple" }
   ];
 
   return (
@@ -776,7 +774,7 @@ const AboutSection = () => {
               transition={{ delay: 0.15, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="mb-10"
               style={{
-                fontFamily: "'Cormorant Garamond', serif",
+                fontFamily: "'Cormorant Garamond Regular', serif",
                 fontSize: "clamp(2.6rem, 4.5vw, 4.4rem)",
                 fontWeight: 300,
                 lineHeight: 1.12,
@@ -817,7 +815,7 @@ const AboutSection = () => {
                   <span className="font-serif text-4xl md:text-[42px] font-light text-[#c49a6c] mb-2 tracking-tight">
                     {stat.num}
                   </span>
-                  <span className="text-[9px] md:text-[10px] uppercase tracking-[0.25em] text-[#888] font-medium">
+                  <span className="text-[9px] md:text-[12px] uppercase tracking-[0.25em] text-[#888] font-medium">
                     {stat.label}
                   </span>
                 </motion.div>

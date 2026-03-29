@@ -17,18 +17,18 @@ const LocationSection = () => {
   };
 
   const landmarks = [
-    { name: "ShriNath Ji Temple", dist: "50 Steps", icon: Landmark },
+    { name: "Shrinath Ji Temple", dist: "50 Steps", icon: Landmark },
     { name: "Nathdwara Market", dist: "1 Min Walk", icon: Navigation },
     { name: "Chaupati / Food Stalls", dist: "3 Min Walk", icon: MapPin },
-    { name: "ShriNathji Gaushala", dist: "10 Min Drive", icon: Clock },
+    { name: "Shrinathji Gaushala", dist: "10 Min Drive", icon: Clock },
   ];
 
   return (
     <section className="relative bg-[#faf9f6] py-24 md:py-32 px-5 sm:px-10 lg:px-20 overflow-hidden">
 
       {/* Aesthetic Background Grain / Elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(196,154,108,0.08),transparent_50%)] pointer-events-none"></div>
-      <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#c49a6c]/20 to-transparent"></div>
+      {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(196,154,108,0.08),transparent_50%)] pointer-events-none"></div> */}
+      {/* <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#c49a6c]/20 to-transparent"></div> */}
 
       {/* Decorative Art with Premium Blending */}
       <motion.div 

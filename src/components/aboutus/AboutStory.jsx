@@ -58,7 +58,7 @@ export default function App() {
                 className="space-y-6 text-[#666] text-[14px] md:text-[15px] font-light leading-[1.9]"
               >
                 <p>
-                  Nestled in the divine city of Nathdwara, Hotel Bhakti Palace is more than just a destination — it’s a sanctuary for the soul. Our story began with a vision to create a space where the serenity of devotion harmonizes with the elegance of modern comfort.
+                  Nestled in the divine city of Nathdwara, Hotel Bhakti is more than just a destination — it’s a sanctuary for the soul. Our story began with a vision to create a space where the serenity of devotion harmonizes with the elegance of modern comfort.
                 </p>
                 <p>
                   Inspired by the timeless charm of Shree Nath Ji Temple and the cultural richness of Rajasthan, Bhakti Palace stands as a symbol of heritage and heartfelt hospitality.

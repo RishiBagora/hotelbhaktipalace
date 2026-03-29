@@ -15,17 +15,18 @@ const HotelName = () => {
       {/* Tagline: Refined typography and spacing */}
       <div className="z-20">
         <p className="
-          text-xl md:text-3xl lg:text-3xl 
-          
+          text-xl md:text-3xl lg:text-2xl 
+          relative
+          top-[-15px]
           text-white 
-            font-sans tracking-widest
+            cormorant-garamond tracking-[3px]
         "
         >
-          Stay Close To ShriNath Ji
+          Stay Close To Shrinath Ji
         </p>
         
         {/* Subtle decorative divider (Optional but adds "Perfection") */}
-        <div className="mt-4 w-24 h-[1px] bg-[#c49a6c] mx-auto opacity-50"></div>
+        <div className=" w-24 h-[1px] bg-[#c49a6c] mx-auto opacity-50"></div>
       </div>
     </div>
   );

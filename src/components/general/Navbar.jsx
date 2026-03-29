@@ -25,7 +25,7 @@ export default function Navbar() {
     };
   }, [isMenuOpen]);
 
-  const allLinks = ["Home", "About Us", "Rooms","Gallery", "Attractions", "Contact"];
+  const allLinks = ["Home", "About Us", "Rooms", "Attractions", "Contact"];
 
   return (
     <>
@@ -36,7 +36,7 @@ export default function Navbar() {
           className={`w-full transition-all duration-500 border-b border-black/5 ${
             isScrolled 
               ? "bg-white/95 backdrop-blur-xl shadow-sm py-2" 
-              : "bg-[#faf9f6]/95 backdrop-blur-md py-4"
+              : "bg-[#FAF9F6]/95 backdrop-blur-md py-4"
           }`}
         >
           <div className="max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-3 items-center">
@@ -73,7 +73,7 @@ export default function Navbar() {
             <div className="flex justify-end">
                <Link
                   to="/contact"
-                  className="text-[9px] md:text-xs uppercase tracking-[0.1em] md:tracking-[0.15em] font-medium border border-[#c49a6c] text-[#c49a6c] md:bg-[#c49a6c] md:text-white rounded-sm px-3 py-1.5 md:px-6 md:py-[10px] hover:bg-[#1a1a1a] hover:border-[#1a1a1a] hover:text-white transition-all duration-400 whitespace-nowrap"
+                  className="text-[9px] md:text-xs uppercase tracking-[0.1em] md:tracking-[0.15em] font-medium border border-[#c49a6c] text-[#c49a6c] md:bg-[#c49a6c] md:text-white px-3 py-1.5 md:px-6 md:py-[10px] hover:bg-[#1a1a1a] hover:border-[#1a1a1a] hover:text-white transition-all duration-400 whitespace-nowrap"
                 >
                   Reserve Now
                 </Link>

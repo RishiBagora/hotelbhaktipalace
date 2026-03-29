@@ -63,11 +63,11 @@ const App = () => {
               <Route path="/rooms" element={<Rooms />} />
               <Route path="/rooms/:slug" element={<RoomsDetailPage />} />
               <Route path="/aboutus" element={<Aboutus />} />
-              <Route path="/pangat" element={<Pangat />} />
+              {/* <Route path="/pangat" element={<Pangat />} /> */}
               <Route path="/attractions" element={<Attractions />} />
               <Route path="/attractions/:slug" element={<AttractionDetailPage />} />
               <Route path="/blogs" element={<Blogs />} />
-              <Route path="/gallery" element={<Gallery />} />
+              {/* <Route path="/gallery" element={<Gallery />} /> */}
               <Route path="/contact" element={<Contacts />} />
             </Routes>
           </main>

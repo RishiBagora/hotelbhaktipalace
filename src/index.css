@@ -107,3 +107,17 @@ body::-webkit-scrollbar {
   transform: translateZ(0);
   will-change: transform;
 }
+
+
+.cormorant-garamond-italic {
+  font-family: "Cormorant Garamond";
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: italic;
+}
+.cormorant-garamond-regular {
+  font-family: "Cormorant Garamond";
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}

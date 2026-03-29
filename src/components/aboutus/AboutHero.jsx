@@ -34,7 +34,7 @@ const AboutHero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
         >
-          Welcome to Hotel Bhakti Palace
+          Welcome to Hotel Bhakti
         </motion.p>
 
         {/* Title */}

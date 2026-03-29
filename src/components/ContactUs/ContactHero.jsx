@@ -48,7 +48,7 @@ const ContactHero = () => {
 
   return (
     <section
-      aria-label="Contact hero for Hotel Bhakyi Palace"
+      aria-label="Contact hero for Hotel Bhakti"
       className="relative overflow-hidden flex items-center justify-center text-center"
       style={{
         // Theme variables (can also be pulled from Tailwind config)
@@ -126,7 +126,7 @@ const ContactHero = () => {
           style={{ fontFamily: "Inter, sans-serif", lineHeight: 1.8 }}
         >
           Whether you have a booking query, need assistance, or want to know more
-          about Hotel Bhakyi Palace, feel free to connect with us — our team is always
+          about Hotel Bhakti, feel free to connect with us — our team is always
           ready to help.
         </motion.p>
       </motion.div>

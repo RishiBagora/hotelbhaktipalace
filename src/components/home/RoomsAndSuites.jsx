@@ -146,7 +146,7 @@ const RoomsAndSuites = () => {
           <div className="flex items-center gap-4 mb-5">
             <div className="h-[1px] w-8 md:w-12 bg-gradient-to-r from-transparent to-[#c49a6c]"></div>
             <p className="text-[9px] md:text-[10px] tracking-[0.35em] uppercase text-[#c49a6c] font-medium font-sans">
-              Our Abodes
+              Our Rooms
             </p>
             <div className="h-[1px] w-8 md:w-12 bg-gradient-to-l from-transparent to-[#c49a6c]"></div>
           </div>
