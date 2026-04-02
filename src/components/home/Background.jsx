@@ -6,11 +6,13 @@ const Background = () => {
 
       {/* 1. Cinematic Background Image */}
       <div className="absolute inset-0 overflow-hidden">
-        <img
-          src="/images/heroimg.png"
-          alt="Hotel Bhakti Luxury Suite"
-          className="absolute inset-0 w-full h-full object-cover scale-100 animate-luxuryZoom"
-        />
+       <img
+  src="https://res.cloudinary.com/dukiisacw/image/upload/f_auto,q_auto:eco,w_1200,h_700,c_fill,g_auto/heroimg_q0cfsa.png"
+  fetchpriority="high"
+  decoding="async"
+  alt="Hotel Bhakti Luxury Suite"
+  className="absolute inset-0 w-full h-full object-cover"
+/>
         {/* Layered Overlays for Depth */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/30"></div>

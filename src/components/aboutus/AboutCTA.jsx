@@ -154,7 +154,7 @@ const AboutCTA = () => {
             style={{ fontFamily: "Inter, sans-serif" }}
           >
             A luxurious stay immersed in devotion, elegance, and comfort —
-            perfectly located near the sacred Shree Nath Ji Temple. Begin your
+            perfectly located near the sacred Shrinath Ji Temple. Begin your
             journey with us today.
           </motion.p>
 

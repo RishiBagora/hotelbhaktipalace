@@ -7,7 +7,7 @@ const HotelName = () => {
       <div className="z-20 mb-6">
         <img 
           className="w-40 md:w-64 lg:w-80 object-contain transition-transform duration-700 hover:scale-105" 
-          src="/images/hotellogo.png" 
+          src="https://res.cloudinary.com/dukiisacw/image/upload/q_auto/f_auto/v1775052675/hotellogo_lbvsre.png" 
           alt="Hotel Logo" 
         />
       </div>
@@ -15,11 +15,11 @@ const HotelName = () => {
       {/* Tagline: Refined typography and spacing */}
       <div className="z-20">
         <p className="
-          text-xl md:text-3xl lg:text-2xl 
+          text-md md:text-3xl lg:text-2xl 
           relative
           top-[-15px]
           text-white 
-            cormorant-garamond tracking-[3px]
+            cormorant-garamond tracking-[3px] md:tracking-[3px]
         "
         >
           Stay Close To Shrinath Ji

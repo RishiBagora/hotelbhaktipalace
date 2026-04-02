@@ -89,7 +89,7 @@ export default function TestimonialSection() {
                 {/* Google Badge */}
                 <div className="absolute bottom-0 right-0 flex items-center gap-1 text-xs text-[#6b6b6b]">
                   <img
-                    src="https://s3-alpha.figma.com/hub/file/2729744958/2a5758d6-4edb-4047-87bb-e6b94dbbbab0-cover.png"
+                    src="https://res.cloudinary.com/dukiisacw/image/upload/q_auto/f_auto/v1775150213/2a5758d6-4edb-4047-87bb-e6b94dbbbab0-cover_ho1cys.png"
                     alt="Google Reviews"
                     className="w-7"
                   />

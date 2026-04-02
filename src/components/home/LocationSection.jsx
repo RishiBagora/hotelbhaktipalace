@@ -39,7 +39,7 @@ const LocationSection = () => {
         className="absolute inset-0 flex justify-center lg:justify-end items-center pointer-events-none z-0"
       >
         <img
-          src="/images/cowimg.png"
+          src="https://res.cloudinary.com/dukiisacw/image/upload/f_webp/q_auto:eco/cowimg_imtjua.png"
           alt="Pichwai Art Detail"
           className="max-w-[400px] md:max-w-[700px] lg:max-w-[800px] object-contain opacity-50 mr-0 lg:-mr-32"
           onError={(e) => e.target.style.display = 'none'}

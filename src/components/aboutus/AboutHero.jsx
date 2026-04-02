@@ -54,7 +54,7 @@ const AboutHero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.7 }}
         >
-          Nestled in the divine town of Nathdwara near the sacred Shree Nath Ji
+          Nestled in the divine town of Nathdwara near the sacred Shrinath Ji
           Temple, our story is one of devotion, hospitality, and timeless luxury.
         </motion.p>
 

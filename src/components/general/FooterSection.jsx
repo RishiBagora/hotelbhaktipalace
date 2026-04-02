@@ -77,7 +77,7 @@
 //                 className="text-sm leading-relaxed"
 //                 style={{ color: 'var(--text-secondary)' }}
 //               >
-//                 A luxury stay in the divine city of Nathdwara — where comfort meets devotion near Shree Nath Ji Temple.
+//                 A luxury stay in the divine city of Nathdwara — where comfort meets devotion near Shrinath Ji Temple.
 //               </p>
 //             </div>
 
@@ -118,7 +118,7 @@
 //                   style={{ color: 'var(--text-secondary)' }}
 //                 >
 //                   <MapPinIcon className="w-4 h-4 flex-shrink-0 mt-1" />
-//                   <span>Near Shree Nath Ji Temple, Nathdwara, Rajasthan - 313301</span>
+//                   <span>Near Shrinath Ji Temple, Nathdwara, Rajasthan - 313301</span>
 //                 </div>
 //               </div>
 //             </div>
@@ -330,7 +330,7 @@
 
 //               <div className="mt-4 pt-4 border-t border-[#BFA281]/10">
 //                 <p className="text-[#7A7A7A] text-sm font-light leading-relaxed">
-//                   Near Shree Nath Ji Temple,<br />
+//                   Near Shrinath Ji Temple,<br />
 //                   Nathdwara, Rajasthan<br />
 //                   313301, India
 //                 </p>
@@ -435,14 +435,7 @@ export default function CleanLuxuryFooter() {
   return (
     <footer className="relative bg-[#0A0A0A] pt-24 pb-10 overflow-hidden selection:bg-[#C49A6C] selection:text-white">
 
-      {/* 1. Subtle Paper Grain (Premium Texture, very faint) */}
-      <div
-        className="absolute inset-0 opacity-[0.04] pointer-events-none mix-blend-screen"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`
-        }}
-      />
-
+      
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
 
         {/* Top Gold Divider */}
@@ -459,13 +452,13 @@ export default function CleanLuxuryFooter() {
           <motion.div variants={fadeUp} className="md:col-span-6 flex flex-col justify-between pr-0 md:pr-12">
             <div className="font-serif font-lighttext-[#C49A6C] mb-6 tracking-wide">
               
-              <img width={200} src="/images/hotellogo.png" />
+              <img width={200} src="https://res.cloudinary.com/dukiisacw/image/upload/q_auto/f_auto/v1775052675/hotellogo_lbvsre.png" />
             </div>
 <p className="text-[#A3A3A3] text-sm md:text-base leading-relaxed max-w-sm">
                 A sanctuary of quiet elegance and devotion in the heart of Nathdwara.
               </p>
             <div className="mt-12">
-              <p className="text-[#F9F9F9] text-sm mb-1">Near Shree Nath Ji Temple</p>
+              <p className="text-[#F9F9F9] text-sm mb-1">Near Shrinath Ji Temple</p>
               <p className="text-[#A3A3A3] text-sm">Nathdwara, Rajasthan 313301, India</p>
 
               <a

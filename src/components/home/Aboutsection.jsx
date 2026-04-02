@@ -713,7 +713,7 @@ const AboutSection = () => {
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 2, ease: "easeOut" }}
-                  src="https://lh3.googleusercontent.com/p/AF1QipM4ZFHDP5AJsf8-TdUlZATYfgKwMHsEPlZzNhIh=s1360-w1360-h1020-rw" 
+                  src="https://res.cloudinary.com/dukiisacw/image/upload/q_auto/f_auto/v1775052824/heroimg_q0cfsa.png" 
                   alt="Hotel Bhakti Exterior"
                   className="w-full h-full object-cover"
                 />

@@ -75,7 +75,7 @@
 //               <p className="text-base md:text-lg lg:text-xl">
 //                 Nathdwara is a town shaped by devotion and time. For centuries,
 //                 pilgrims, artists, and seekers have arrived here drawn by the
-//                 presence of Shree Nath Ji — not as a spectacle, but as a living
+//                 presence of Shrinath Ji — not as a spectacle, but as a living
 //                 rhythm of faith and reflection.
 //               </p>
 
@@ -203,7 +203,7 @@ const WhyVisitNathdwara = () => {
               <p>
                 Nathdwara is a town shaped by devotion and time. For centuries,
                 pilgrims, artists, and seekers have arrived here drawn by the
-                presence of Shree Nath Ji — not as a spectacle, but as a living
+                presence of Shrinath Ji — not as a spectacle, but as a living
                 rhythm of faith and reflection.
               </p>
 

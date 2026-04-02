@@ -8,12 +8,12 @@ import LocationSection from '../components/home/LocationSection'
 import DiningSection from '../components/home/DiningSection'
 import ExperienceStats from '../components/aboutus/ExperienceStats'
 import TestimonialSection from '../components/home/TestimonialSection'
+import Hero from '../components/home/Hero'
 
 const Home = () => {
   return (
     <div className='w-screen bg-[#faf9f6]'>
-        <HotelName/>
-        <Background/>
+        <Hero/>
         <Aboutsection/> 
         <LocationSection/>
         <RoomsAndSuites/>

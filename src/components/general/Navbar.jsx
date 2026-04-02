@@ -59,7 +59,7 @@ export default function Navbar() {
               <Link to="/" className="relative outline-none">
                 <img 
                   className={`w-auto transition-all duration-500 ${isScrolled ? "h-10" : "h-14 md:h-16"}`} 
-                  src="/images/bhaktilogo.png" 
+                  src="/images/meeralogo.webp" 
                   alt="Hotel Bhakti Palace"
                   onError={(e) => { 
                       e.target.onerror = null; 

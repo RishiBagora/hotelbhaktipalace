@@ -130,7 +130,7 @@ const CoreValues = () => {
       num: "02",
       title: "Spiritual Serenity",
       description:
-        "Located close to the sacred Shree Nath Ji Temple, Hotel Bhakti offers an atmosphere of calm, reflection, and inner peace.",
+        "Located close to the sacred Shrinath Ji Temple, Hotel Bhakti offers an atmosphere of calm, reflection, and inner peace.",
     },
     {
       num: "03",

@@ -61,7 +61,7 @@ export default function App() {
                   Nestled in the divine city of Nathdwara, Hotel Bhakti is more than just a destination — it’s a sanctuary for the soul. Our story began with a vision to create a space where the serenity of devotion harmonizes with the elegance of modern comfort.
                 </p>
                 <p>
-                  Inspired by the timeless charm of Shree Nath Ji Temple and the cultural richness of Rajasthan, Bhakti Palace stands as a symbol of heritage and heartfelt hospitality.
+                  Inspired by the timeless charm of Shrinath Ji Temple and the cultural richness of Rajasthan, Hotel Bhakti stands as a symbol of heritage and heartfelt hospitality.
                 </p>
                 <p>
                   Here, tradition and tranquility meet contemporary elegance — offering guests not just a stay, but a soulful experience to remember.
@@ -101,7 +101,7 @@ export default function App() {
                   viewport={{ once: true }}
                   transition={{ duration: 2, ease: "easeOut" }}
                   src={storyImage} 
-                  alt="Elegant interior of Hotel Bhakti Palace, Nathdwara"
+                  alt="Elegant interior of Hotel Hotel Bhakti, Nathdwara"
                   className="object-cover w-full h-full"
                 />
                 
@@ -177,7 +177,7 @@ export default function App() {
 //             className="text-[#6d6d6d] text-base md:text-lg leading-relaxed mb-4"
 //             style={{ fontFamily: "Inter, sans-serif", lineHeight: "1.2" }}
 //           >
-//             Nestled in the divine city of Nathdwara, Hotel Bhakti Palace is more
+//             Nestled in the divine city of Nathdwara, Hotel Hotel Bhakti is more
 //             than just a destination — it’s a sanctuary for the soul. Our story
 //             began with a vision to create a space where the serenity of devotion
 //             harmonizes with the elegance of modern comfort.
@@ -187,8 +187,8 @@ export default function App() {
 //             className="text-[#6d6d6d] text-base md:text-lg leading-relaxed mb-4"
 //             style={{ fontFamily: "Inter, sans-serif", lineHeight: "1.2" }}
 //           >
-//             Inspired by the timeless charm of Shree Nath Ji Temple and the
-//             cultural richness of Rajasthan, Bhakti Palace stands as a symbol of
+//             Inspired by the timeless charm of Shrinath Ji Temple and the
+//             cultural richness of Rajasthan, Hotel Bhakti stands as a symbol of
 //             heritage and heartfelt hospitality. Every detail — from the
 //             handcrafted interiors to the warm service — reflects our devotion to
 //             perfection and guest satisfaction.
@@ -215,7 +215,7 @@ export default function App() {
 //         >
 //           <img
 //             src="https://imgs.search.brave.com/BTtaFukr5YlGikv39pICd9x7h6F60Y9y9v9dsl8kbQE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jb250/ZW50LmpkbWFnaWNi/b3guY29tL3YyL2Nv/bXAvbmF0aGR3YXJh/L3E4Lzk5OTlwMjk1/My4yOTUzLjI1MDMw/NDIwMTEyMS5qOHE4/L2NhdGFsb2d1ZS9t/b3RpLW1haGFsLWxh/bC1iYXphci1uYXRo/ZHdhcmEtdG91cmlz/dC1hdHRyYWN0aW9u/LThvMDdiMjJybWkt/MjUwLmpwZz93PTY0/MCZxPTc1"
-//             alt="Luxury hotel in Nathdwara - Hotel Bhakti Palace"
+//             alt="Luxury hotel in Nathdwara - Hotel Hotel Bhakti"
 //             loading="lazy"
 //             className="rounded-2xl shadow-lg object-cover w-full h-[400px] md:h-[500px] max-h-[550px]"
 //           />

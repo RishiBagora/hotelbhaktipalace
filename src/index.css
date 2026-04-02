@@ -13,7 +13,7 @@ body {
   overscroll-behavior-y: none;
 }
 
-/* ---------------- LENIS BEST PRACTICES ----------------
+/* ---------------- LENIS BEST PRACTICES ---------------- */
 html.lenis, html.lenis body {
   height: auto;
 }
@@ -28,16 +28,12 @@ html.lenis, html.lenis body {
 }
 .lenis.lenis-smooth iframe {
   pointer-events: none;
-} */
-
-/* ---------------- NAV PERFORMANCE ---------------- */
-nav {
-  will-change: transform;
 }
 
 /* ---------------- NAV PERFORMANCE ---------------- */
 nav {
   will-change: transform;
+  transform: translateZ(0);
 }
 
 /* ---------------- SCROLLBAR (HIDDEN BUT WORKING) ---------------- */
