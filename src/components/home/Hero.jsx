@@ -2,33 +2,35 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <section className="relative w-full h-screen overflow-hidden bg-black flex items-center justify-center">
+    <section className="relative w-full min-h-[90vh] md:h-screen overflow-hidden bg-black flex items-start justify-center pt-[120px] md:pt-[160px]">
 
-      {/* ✅ Background Image (LCP optimized) */}
+      {/* 🔥 HERO IMAGE (LCP OPTIMIZED) */}
       <img
-        src="https://res.cloudinary.com/dukiisacw/image/upload/f_auto,q_auto:eco,w_1200,h_700,c_fill,g_auto/heroimg_q0cfsa.png"
+        src="https://res.cloudinary.com/dukiisacw/image/upload/f_auto,q_auto:low,dpr_auto,w_1200,c_fill,g_auto/heroimg_q0cfsa.png"
         srcSet="
-          https://res.cloudinary.com/dukiisacw/image/upload/f_auto,q_auto:eco,w_500/heroimg_q0cfsa.png 500w,
-          https://res.cloudinary.com/dukiisacw/image/upload/f_auto,q_auto:eco,w_900/heroimg_q0cfsa.png 900w,
-          https://res.cloudinary.com/dukiisacw/image/upload/f_auto,q_auto:eco,w_1200/heroimg_q0cfsa.png 1200w
+          https://res.cloudinary.com/dukiisacw/image/upload/f_auto,q_auto:low,dpr_auto,w_400/heroimg_q0cfsa.png 400w,
+          https://res.cloudinary.com/dukiisacw/image/upload/f_auto,q_auto:low,dpr_auto,w_800/heroimg_q0cfsa.png 800w,
+          https://res.cloudinary.com/dukiisacw/image/upload/f_auto,q_auto:low,dpr_auto,w_1200/heroimg_q0cfsa.png 1200w
         "
         sizes="100vw"
         fetchpriority="high"
+        loading="eager"
         decoding="async"
         alt="Hotel Bhakti Luxury Suite"
         className="absolute inset-0 w-full h-full object-cover"
       />
 
-      {/* ✅ Overlay (keep it simple) */}
+      {/* Overlay */}
       <div className="absolute inset-0 bg-black/60"></div>
 
-      {/* ✅ Content */}
-      <div className="relative -top-50  z-10 flex flex-col items-center px-4">
+      {/* Content */}
+      <div className="relative z-10 flex flex-col items-center px-4 text-center">
 
-        {/* Logo */}
+        {/* Logo (lazy so it doesn’t block LCP) */}
         <img
           src="https://res.cloudinary.com/dukiisacw/image/upload/f_auto,q_auto,w_400/hotellogo_lbvsre.png"
           alt="Hotel Bhakti Palace"
+          loading="lazy"
           className="w-40 md:w-64 lg:w-72 object-contain mb-4"
         />
 
