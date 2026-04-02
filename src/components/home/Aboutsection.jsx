@@ -709,14 +709,27 @@ const AboutSection = () => {
               
               <div className="relative w-full h-full overflow-hidden z-10 bg-[#e9e5e0]">
                 <motion.img
-                  initial={{ scale: 1.1 }}
-                  whileInView={{ scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 2, ease: "easeOut" }}
-                  src="https://res.cloudinary.com/dukiisacw/image/upload/q_auto/f_auto/v1775052824/heroimg_q0cfsa.png" 
-                  alt="Hotel Bhakti Exterior"
-                  className="w-full h-full object-cover"
-                />
+  initial={{ opacity: 0 }}   // ❌ scale hata diya
+  animate={{ opacity: 1 }}
+  transition={{ duration: 1 }}
+
+  src="https://res.cloudinary.com/dukiisacw/image/upload/f_auto,q_auto:low,dpr_auto,w_1200,c_fill,g_auto/v1775052824/heroimg_q0cfsa.png"
+
+  srcSet="
+    https://res.cloudinary.com/dukiisacw/image/upload/f_auto,q_auto:low,dpr_auto,w_400/v1775052824/heroimg_q0cfsa.png 400w,
+    https://res.cloudinary.com/dukiisacw/image/upload/f_auto,q_auto:low,dpr_auto,w_800/v1775052824/heroimg_q0cfsa.png 800w,
+    https://res.cloudinary.com/dukiisacw/image/upload/f_auto,q_auto:low,dpr_auto,w_1200/v1775052824/heroimg_q0cfsa.png 1200w
+  "
+
+  sizes="100vw"
+
+  fetchpriority="high"
+  loading="eager"
+  decoding="async"
+
+  alt="Hotel Bhakti Exterior"
+  className="w-full h-full object-cover"
+/>
                 <div className="absolute inset-0 bg-black/5 mix-blend-multiply" />
                 <div className="absolute inset-0 bg-[#c49a6c]/5 mix-blend-overlay" />
               </div>
