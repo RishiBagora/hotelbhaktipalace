@@ -53,28 +53,47 @@ const slideInRight = {
 // PDF Page renderer component
 const PDFPage = ({ pdf, pageNumber }) => {
   const canvasRef = useRef(null);
+  const containerRef = useRef(null);
   const [loading, setLoading] = useState(true);
+  const [aspectRatio, setAspectRatio] = useState(null);
+  const lastWidthRef = useRef(0);
 
+  // 1. Fetch aspect ratio on mount/pdf load to prevent layout shift
+  useEffect(() => {
+    if (!pdf) return;
+    let active = true;
+    pdf.getPage(pageNumber).then((page) => {
+      if (!active) return;
+      const viewport = page.getViewport({ scale: 1.0 });
+      setAspectRatio(viewport.width / viewport.height);
+    }).catch(err => {
+      console.error("Error getting page dimensions:", err);
+    });
+    return () => {
+      active = false;
+    };
+  }, [pdf, pageNumber]);
+
+  // 2. Render and draw to canvas responsively
   useEffect(() => {
     let active = true;
     let renderTask = null;
 
     const renderPage = () => {
-      if (!pdf || !canvasRef.current) return;
+      if (!pdf || !canvasRef.current || !containerRef.current) return;
       
       pdf.getPage(pageNumber).then((page) => {
         if (!active) return;
         const canvas = canvasRef.current;
         const context = canvas.getContext('2d');
 
-        // Initial rendering viewport scale
-        const viewport = page.getViewport({ scale: 1.0 });
-        
         // Calculate container width
-        const parentWidth = canvas.parentElement.clientWidth || 800;
+        const parentWidth = containerRef.current.clientWidth || 800;
+        lastWidthRef.current = parentWidth;
         
         // Adjust for high density displays (Retina)
         const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+        const viewport = page.getViewport({ scale: 1.0 });
         const scale = (parentWidth / viewport.width) * pixelRatio;
         
         const scaledViewport = page.getViewport({ scale });
@@ -108,16 +127,23 @@ const PDFPage = ({ pdf, pageNumber }) => {
 
     renderPage();
 
-    // Rerender on resize with debounce
+    // Rerender on resize with debounce, checking if container width actually changed
     let resizeTimeout;
     const handleResize = () => {
+      if (!containerRef.current) return;
+      const currentWidth = containerRef.current.clientWidth || 0;
+      
+      // If width did not change (e.g. mobile height-only scroll resize), ignore
+      if (currentWidth === lastWidthRef.current) return;
+      
       clearTimeout(resizeTimeout);
       resizeTimeout = setTimeout(() => {
         if (active) {
-          setLoading(true);
+          // Note: we do NOT set loading to true here to keep the current canvas visible
+          // while redrawing in the background, avoiding flashes/loaders on window resize.
           renderPage();
         }
-      }, 400);
+      }, 300);
     };
 
     window.addEventListener('resize', handleResize);
@@ -131,16 +157,20 @@ const PDFPage = ({ pdf, pageNumber }) => {
   }, [pdf, pageNumber]);
 
   return (
-    <div className="w-full relative bg-white shadow-xl rounded-2xl overflow-hidden border border-[#F0EBE3]/50 mb-12 max-w-4xl mx-auto transition-transform hover:scale-[1.01] duration-500">
+    <div 
+      ref={containerRef}
+      className="w-full relative bg-white shadow-xl rounded-2xl overflow-hidden border border-[#F0EBE3]/50 mb-12 max-w-4xl mx-auto transition-transform hover:scale-[1.01] duration-500"
+      style={{ aspectRatio: aspectRatio ? `${aspectRatio}` : '0.707' }}
+    >
       {loading && (
-        <div className="w-full aspect-[1/1.414] max-h-[85vh] flex flex-col items-center justify-center bg-[#FAF9F6] border-b border-[#F0EBE3]/30">
+        <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#FAF9F6] z-10">
           <div className="flex flex-col items-center gap-4">
             <div className="w-10 h-10 border-4 border-[#C49A6C] border-t-transparent rounded-full animate-spin"></div>
             <p className="text-[10px] uppercase tracking-widest text-[#C49A6C] font-semibold">Preparing Menu Page {pageNumber}...</p>
           </div>
         </div>
       )}
-      <canvas ref={canvasRef} className={`w-full ${loading ? "hidden" : "block"}`} />
+      <canvas ref={canvasRef} className="w-full block" />
     </div>
   );
 };
