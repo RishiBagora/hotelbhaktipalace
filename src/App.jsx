@@ -16,6 +16,7 @@ const AttractionDetailPage = lazy(() => import('./Pages/AttractionDetailPage'));
 const Blogs = lazy(() => import('./Pages/Blogs'));
 // const Gallery = lazy(() => import('./Pages/Gallery'));
 const Contacts = lazy(() => import('./Pages/Contacts'));
+const Menu = lazy(() => import('./Pages/Menu'));
 
 // A smooth fallback loader using the brand color (#C19B76)
 const PageLoader = () => (
@@ -78,6 +79,7 @@ const App = () => {
                 <Route path="/blogs" element={<Blogs />} />
                 {/* <Route path="/gallery" element={<Gallery />} /> */}
                 <Route path="/contact" element={<Contacts />} />
+                <Route path="/menu" element={<Menu />} />
               </Routes>
             </Suspense>
           </main>
